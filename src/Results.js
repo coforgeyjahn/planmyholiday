@@ -1,25 +1,27 @@
-import React from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
+import { createApi } from 'unsplash-js';
+import './Results.css';
+import { REACT_APP_UNSPLASH_ACCESS_KEY } from "./keys";
+
+const unsplash = createApi({
+  accessKey: REACT_APP_UNSPLASH_ACCESS_KEY
+});
 
 function Results() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const location = useLocation();
-  console.log("response: ", location.state?.response?.candidates?.[0]?.content)
 
   const responseText = location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
-
-
   const preferences = location.state?.selectedPreferences || [];
 
-  function handleClick() {
-    navigate('/set-options')
-  }
+  const [images, setImages] = useState({});
 
-  // Example function to extract destinations from responseText
   const extractDestinations = (text) => {
     const destinations = [];
-    const destinationPattern = /### \d+\.\s\*\*(.+?)\*\*/g; // Matches "### 1. **Title**"
-    const descriptionPattern = /.+?\*\*\n\n([\s\S]+?)(?=(\n\n###|$))/g; // Matches description until the next "###" or end
+    const destinationPattern = /### \d+\.\s\*\*(.+?)\*\*/g;
+    const descriptionPattern = /.+?\*\*\n\n([\s\S]+?)(?=(\n\n###|$))/g;
 
     let match;
     while ((match = destinationPattern.exec(text))) {
@@ -35,27 +37,62 @@ function Results() {
     return destinations;
   };
 
-  console.log("preferences: ", preferences)
-  const destinations = extractDestinations(responseText);
+  const destinations = useMemo(() => extractDestinations(responseText), [responseText]);
+
+  const fetchImages = async () => {
+    const newImages = {};
+    for (const destination of destinations) {
+      try {
+        const response = await unsplash.search.getPhotos({
+          query: destination.title,
+          page: 1,
+          perPage: 1,
+        });
+
+        if (response.errors) {
+          console.error("Error occurred: ", response.errors[0]);
+        } else {
+          const photo = response.response.results[0];
+          if (photo) {
+            newImages[destination.title] = photo.urls.regular;
+          }
+        }
+      } catch (error) {
+        console.error("Error fetching photo: ", error);
+      }
+    }
+    setImages(newImages);
+  };
+
+  useEffect(() => {
+    fetchImages();
+  }, [destinations]);
+
+  const handleClick = () => {
+    navigate('/set-options');
+  };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}>
-      <button className="back-button" onClick={handleClick}>Go back and edit preferences</button>
+    <div className="results-rendering" style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}>
+      <button
+        className="back-button"
+        onClick={handleClick}>
+        Go back and edit preferences
+      </button>
       <h1 style={{ color: "#2c3e50", fontSize: "2.5em", marginBottom: "10px" }}>
-        Your Dream Travel Destination
+        Your Perfect Holiday
       </h1>
       {preferences.length > 0 ? (
-    <p>
-        Based on your travel preferences of{" "}
-        {preferences.map((pref, index) =>
-        index === preferences.length - 1 ? `and ${pref}` : `${pref}, `
-        )}
-        , here are your top recommendations:
-    </p>
-    ) : (
-    <p>No preferences provided.</p>
-    )}
-
+        <p>
+          Based on your travel preferences of{" "}
+          {preferences.map((pref, index) =>
+            index === preferences.length - 1 ? `and ${pref}` : `${pref}, `
+          )}
+          , here are your top recommendations:
+        </p>
+      ) : (
+        <p>No preferences provided.</p>
+      )}
 
       {destinations.map((destination, index) => (
         <div
@@ -68,41 +105,30 @@ function Results() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           }}
         >
-          <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
+          <h2
+            style={{
+              color: "#34495e",
+              fontSize: "1.8em",
+              marginBottom: "10px",
+            }}
+          >
             {index + 1}. {destination.title}
           </h2>
           <img
-            src={`https://via.placeholder.com/800x400.png?text=${encodeURIComponent(
-              destination.title
-            )}`}
+            src={images[destination.title] || "https://via.placeholder.com/400"}
             alt={destination.title}
             style={{
-              width: "100%",
-              borderRadius: "10px",
-              maxHeight: "200px",
-              objectFit: "cover",
-              marginBottom: "10px",
+                width: "65%",
+                height: "500px",
+                borderRadius: "10px",
+                objectFit: "cover",
             }}
           />
           <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>
-            {destination.description}
+            <ReactMarkdown>{destination.description}</ReactMarkdown>
           </div>
         </div>
       ))}
-
-      <div
-        style={{
-          marginTop: "20px",
-          padding: "10px",
-          backgroundColor: "#f9f9f9",
-          borderRadius: "10px",
-          border: "1px solid #ddd",
-        }}
-      >
-        <p style={{ color: "#7f8c8d", fontSize: "0.9em" }}>
-          Honorable Mentions:
-        </p>
-      </div>
     </div>
   );
 }

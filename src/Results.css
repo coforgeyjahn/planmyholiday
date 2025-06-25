@@ -1,0 +1,17 @@
+.results-rendering {
+    justify-content: center;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFD54F);
+}
+
+.back-button {
+    background-color: white;
+    color: #4a4a4a;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 1rem;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease;
+    display: flex;
+    justify-content: right;
+}
