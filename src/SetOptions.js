@@ -3,8 +3,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./SetOptions.css";
 import { GoogleGenAI } from "@google/genai";
+import { REACT_APP_GOOGLE_API_KEY } from "./keys";
+import Loading from './Loading.js';
 
-const ai = new GoogleGenAI({ apiKey: "AIzaSyAWiZ2bLXmhSO8uUV9bZgKD2HWk7FXn2AQ" });
+const ai = new GoogleGenAI({ apiKey: REACT_APP_GOOGLE_API_KEY });
 
 const travelPreferences = [
   "Adventure",
@@ -33,6 +35,8 @@ const pastelColors = [
 const SetOptions = () => {
   const navigate = useNavigate();
   const [selectedPreferences, setSelectedPreferences] = useState([]);
+  const [loading, setLoading] = useState(false);
+  
 
   const togglePreference = (preference) => {
     if (selectedPreferences.includes(preference)) {
@@ -47,24 +51,29 @@ const SetOptions = () => {
   const isSelected = (preference) => selectedPreferences.includes(preference);
 
   async function findTravelDestinations() {
+    setLoading(true);
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `Can you find me the top 2 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, ${selectedPreferences[2]}?`,
+        contents: `Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, ${selectedPreferences[2]}?`,
       });
-
-      console.log("Querying travel preferences: ", selectedPreferences, response);
-
-      // Navigate to the Results page and pass the response as state
-      navigate("/results", { state: { response, selectedPreferences }});
+       // Simulate delay so users see loading animation
+      setTimeout(() => {
+        navigate("/results", { state: { response, selectedPreferences } });
+      }, 10000);
     } catch (error) {
+      setLoading(false);
       console.error("Error fetching travel destinations:", error);
     }
   }
 
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="set-options-viewport">
-      <h1 className="prompt">Choose Your Travel Preferences</h1>
+      <h1 className="prompt">Pick Your Top 3 Priorities for Your Next Holiday</h1>
       <div className="bubbles-container">
         {travelPreferences.map((preference, index) => (
           <motion.div
@@ -86,13 +95,14 @@ const SetOptions = () => {
       <div className="set-options-selected mt-6 text-center text-white">
         {selectedPreferences.length > 0 && (
           <div className="set-options-selected-options">
-            <h2 className="text-xl font-semibold mb-2">Your Preferences:</h2>
-            <p>{selectedPreferences.join(", ")}</p>
+            <div className="text-xl font-semibold mb-2">
+              Your Preferences: <p>{selectedPreferences.join(", ")}</p>
+            </div>
           </div>
         )}
         {selectedPreferences.length === 3 && (
           <button
-            className="set-options-confirm mt-6 py-2 px-6 rounded-full shadow-md hover:bg-blue-500 transition-all duration-200"
+            className="set-options-confirm"
             onClick={findTravelDestinations}
           >
             Confirm Selection

@@ -4,29 +4,47 @@
 @tailwind utilities;
 
 /* Custom styles */
-.App-header {
+.App-container {
+  z-index: -1;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: transparent; /* Background managed by Tailwind */
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFD54F);
+  width: 100%;
+  height: 100%;
 }
 
 .App-logo {
-  z-index: -1;
-  height: 12 rem; /* Adjust logo size */
+  z-index: 0;
+  height: 20rem; /* Adjust logo size */
   pointer-events: none;
 }
 
-.App-header-text {
+.App-text {
   z-index: 1;
-  font-size: large;
-  display: flex;
-  flex-direction: column;
+  font-size:x-large;
+  font-family: 'Pacifico', cursive;
   align-items: center;
   justify-content: center;
   text-align: center;
+  display:block;
+}
+
+.App-button {
+  background-color: white;
+  color: #4a4a4a;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 1rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+  
+}
+
+.App-button:hover {
+  background-color: #f9fafb;
 }
 
 @media (prefers-reduced-motion: no-preference) {
