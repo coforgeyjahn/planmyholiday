@@ -22,17 +22,17 @@ Responsive Design: A smooth and interactive user experience with animations powe
 7. Future Enhancements
 
 ## Technologies Used
-# Frontend:
+Frontend:
 1. React: Component-based UI library.
 2. Framer Motion: For smooth animations.
 3. React Router: For navigation between components/pages.
 4. React Markdown: For rendering AI-generated descriptions.
 
-# APIs:
+APIs:
 1. Google Gemini AI: For generating travel recommendations.
 2. Unsplash API: For fetching destination images.
 
-# Styling:
+Styling:
 1. Tailwind CSS: For quick and customizable styling.
 2. Custom CSS: For specific UI components.
 
