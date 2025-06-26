@@ -1,0 +1,103 @@
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  /* background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%); */
+  /* background-image: radial-gradient(circle at top left, #ffd194, #f0f4f8); */
+}
+
+.bubbles-container {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3 columns */
+  gap: 2rem;
+  justify-items: center; /* Center items in each column */
+  align-items: center; /* Align items vertically */
+}
+
+.set-options-viewport {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: center; /* Centers content horizontally */
+  height: 100vh; /* Full viewport height */
+  width: 100vw; /* Full viewport width */
+  background-image: url('creek.jpeg');
+  background-size: cover;
+  background-position: center; /* Center the background image/gradient */
+}
+
+  
+  .bubble {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    /* padding: 10px; */
+    user-select: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
+    border: 4px solid transparent;
+  }
+  
+  .bubble.selected {
+    border: 4px solid white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .prompt {
+    padding-bottom: 50px;
+    font-size: 42px;
+    color: black;
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .set-options-selected {
+    margin-top: 30px;
+    display: inline-flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    width: fit-content;
+    justify-content: center;
+    align-items: center;
+    background: #fafafa; /* Light neutral background */
+    border-radius: 10px; /* Softer rounding */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.set-options-selected-options {
+    font-family: 'Pacifico', cursive;
+    font-weight: 500; /* Medium font weight for softer feel */
+    padding: 1rem; /* Adds inner spacing */
+    background: linear-gradient(135deg, #FFD6E8, #FFF5E6); /* Soft pastel gradient */
+    color: #333; /* Darker text for better readability */
+    border-radius: 14px;
+    flex-wrap: nowrap;
+}
+
+.set-options-confirm {
+    width: 80px; /* Smaller bubble */
+    height: 80px;
+    border-radius: 50%;
+    font-family: 'Pacifico', cursive;
+    font-size: 14px; /* Slightly smaller font */
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    user-select: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid #ffccd5; /* Light border for definition */
+    background: linear-gradient(135deg, #FFEFEF, #FFCCCC); /* Subtle pink gradient */
+    box-shadow: 0 4px 8px rgba(255, 175, 175, 0.5); /* Lighter shadow */
+}
