@@ -2,6 +2,7 @@
   "name": "planmytravel",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "@google/genai": "^1.6.0",
     "@testing-library/dom": "^10.4.0",
