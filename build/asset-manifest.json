@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.00f019b0.css",
-    "main.js": "/static/js/main.68849641.js",
+    "main.css": "/static/css/main.24214eea.css",
+    "main.js": "/static/js/main.db13f0bc.js",
+    "static/media/earth-big.gif": "/static/media/earth-big.8afa78b4e815bf22e28f.gif",
     "static/media/creek.jpeg": "/static/media/creek.160d3c9abd76d32652ca.jpeg",
     "static/media/logo.png": "/static/media/logo.4ca96b201e5027099be0.png",
     "index.html": "/index.html",
-    "main.00f019b0.css.map": "/static/css/main.00f019b0.css.map",
-    "main.68849641.js.map": "/static/js/main.68849641.js.map"
+    "main.24214eea.css.map": "/static/css/main.24214eea.css.map",
+    "main.db13f0bc.js.map": "/static/js/main.db13f0bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.00f019b0.css",
-    "static/js/main.68849641.js"
+    "static/css/main.24214eea.css",
+    "static/js/main.db13f0bc.js"
   ]
 }
