@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
-import logo from "./logo.png";
+import earth from "./earth-big.gif";
 import './App.css';
 import SetOptions from "./SetOptions.js";
 import Results from "./Results.js"
@@ -19,7 +19,7 @@ function Home() {
 
   return (
     <div className="App-container bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={earth} className="App-logo" alt="earth" />
         <div className="App-text">
           <h1 className="App-header-text text-4xl font-bold mb-4">Plan Your Dream Vacation</h1>
           <p className="App-description text-4xl mb-8">

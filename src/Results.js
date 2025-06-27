@@ -1,43 +1,51 @@
 import React, { useState, useEffect, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import { createApi } from 'unsplash-js';
-import './Results.css';
+import { createApi } from "unsplash-js";
+import "./Results.css";
 import { REACT_APP_UNSPLASH_ACCESS_KEY } from "./keys";
 
 const unsplash = createApi({
-  accessKey: REACT_APP_UNSPLASH_ACCESS_KEY
+  accessKey: REACT_APP_UNSPLASH_ACCESS_KEY,
 });
 
 function Results() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const responseText = location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+  const responseText =
+    location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text || "";
+
   const preferences = location.state?.selectedPreferences || [];
 
   const [images, setImages] = useState({});
+  const [loading, setLoading] = useState(true);
 
-  const extractDestinations = (text) => {
-    const destinations = [];
-    const destinationPattern = /### \d+\.\s\*\*(.+?)\*\*/g;
-    const descriptionPattern = /.+?\*\*\n\n([\s\S]+?)(?=(\n\n###|$))/g;
-
-    let match;
-    while ((match = destinationPattern.exec(text))) {
-      destinations.push({ title: match[1], description: "" });
+  const destinations = useMemo(() => {
+    if (!responseText) {
+      console.error("Response text is empty or undefined.");
+      return [];
     }
 
-    let i = 0;
-    while ((match = descriptionPattern.exec(text)) && i < destinations.length) {
-      destinations[i].description = match[1].trim();
-      i++;
+    const normalizedText = responseText.replace(/\r\n/g, "\n"); // Normalize line endings
+    const matches = Array.from(
+      normalizedText.matchAll(/###\s?\d+\.\s?\*\*(.+?)\*\*\n+([\s\S]+?)(?=---|$)/g)
+    );
+
+    const extracted = matches.map((match, index) => ({
+      title: match[1]?.trim() || `Untitled Destination ${index + 1}`,
+      description: match[2]?.trim() || "No description available.",
+    }));
+
+    setLoading(false); // Parsing is complete
+    return extracted;
+  }, [responseText]);
+
+  useEffect(() => {
+    if (destinations.length > 0) {
+      fetchImages();
     }
-
-    return destinations;
-  };
-
-  const destinations = useMemo(() => extractDestinations(responseText), [responseText]);
+  }, [destinations]);
 
   const fetchImages = async () => {
     const newImages = {};
@@ -64,19 +72,24 @@ function Results() {
     setImages(newImages);
   };
 
-  useEffect(() => {
-    fetchImages();
-  }, [destinations]);
-
   const handleClick = () => {
-    navigate('/set-options');
+    navigate("/set-options");
   };
 
+  if (loading) {
+    return (
+      <div style={{ textAlign: "center", marginTop: "50px" }}>
+        <p>Loading your holiday recommendations...</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="results-rendering" style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}>
-      <button
-        className="back-button"
-        onClick={handleClick}>
+    <div
+      className="results-rendering"
+      style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}
+    >
+      <button className="back-button" onClick={handleClick}>
         Go back and edit preferences
       </button>
       <h1 style={{ color: "#2c3e50", fontSize: "2.5em", marginBottom: "10px" }}>
@@ -93,7 +106,6 @@ function Results() {
       ) : (
         <p>No preferences provided.</p>
       )}
-
       {destinations.map((destination, index) => (
         <div
           key={index}
@@ -105,23 +117,17 @@ function Results() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           }}
         >
-          <h2
-            style={{
-              color: "#34495e",
-              fontSize: "1.8em",
-              marginBottom: "10px",
-            }}
-          >
+          <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
             {index + 1}. {destination.title}
           </h2>
           <img
             src={images[destination.title] || "https://via.placeholder.com/400"}
             alt={destination.title}
             style={{
-                width: "65%",
-                height: "500px",
-                borderRadius: "10px",
-                objectFit: "cover",
+              width: "65%",
+              height: "500px",
+              borderRadius: "10px",
+              objectFit: "cover",
             }}
           />
           <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>

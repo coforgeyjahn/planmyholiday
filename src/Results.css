@@ -1,8 +1,19 @@
-.results-rendering {
-    justify-content: center;
+#root{
     background: linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFD54F);
 }
+/* Main Container */
+.results-rendering {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFD54F);
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    min-height: 100vh;
+}
 
+/* Back Button */
 .back-button {
     background-color: white;
     color: #4a4a4a;
@@ -12,6 +23,109 @@
     border-radius: 1rem;
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
     transition: background-color 0.2s ease;
-    display: flex;
-    justify-content: right;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    align-self: flex-end; /* Aligns the button to the right */
+}
+
+.back-button:hover {
+    background-color: #f3f4f6;
+}
+
+/* Title */
+.results-rendering h1 {
+    color: #4a4a4a;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Travel Preferences */
+.results-rendering p {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* Destination Cards */
+.results-rendering > div {
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    max-width: 70%;
+    width: 100%;
+    text-align: center;
+}
+
+/* Destination Title */
+.results-rendering h2 {
+    color: #4a4a4a;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* Images */
+.results-rendering img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* Markdown Description */
+.results-rendering .markdown {
+    color: #6b7280;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .results-rendering h1 {
+        font-size: 2rem;
+    }
+
+    .results-rendering h2 {
+        font-size: 1.5rem;
+    }
+
+    .results-rendering p {
+        font-size: 1rem;
+    }
+
+    .back-button {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .results-rendering img {
+        max-width: 90%; /* Scales the image slightly for tablets */
+        min-width: 250px; /* Ensures images remain a good size */
+    }
+}
+
+@media (max-width: 480px) {
+    .results-rendering h1 {
+        font-size: 1.8rem;
+    }
+
+    .results-rendering h2 {
+        font-size: 1.3rem;
+    }
+
+    .results-rendering p {
+        font-size: 0.9rem;
+    }
+
+    .back-button {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    .results-rendering img {
+        max-width: 100%; /* Utilizes full width of smaller screens */
+        min-width: 200px; /* Prevents images from getting too small */
+    }
 }

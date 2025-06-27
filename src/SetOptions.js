@@ -18,6 +18,13 @@ const travelPreferences = [
   "City Life",
   "History",
   "Wildlife",
+  "Nightlife",
+  "Shopping",
+  "Romance",
+  "Warm Weather",
+  "Snow Sports",
+  "Health & Wellness",
+  "Family-friendly"
 ];
 
 const pastelColors = [
@@ -30,6 +37,13 @@ const pastelColors = [
   "#FFBAC5", // Rose
   "#B4D6FF", // Sky blue
   "#FFD6BA", // Light coral
+  "#AEC6CF", // Powder Blue
+  "#C5B4E3", // Lilac
+  "#B5EAD7", // Seafoam Green
+  "#FADADD", // Blush Pink
+  "#FFDAB9", // Light Apricot
+  "#D4F1F4", // Soft Cyan
+  "#FFE5B4", // Pale Peach
 ];
 
 const SetOptions = () => {
@@ -51,25 +65,25 @@ const SetOptions = () => {
   const isSelected = (preference) => selectedPreferences.includes(preference);
 
   async function findTravelDestinations() {
-    setLoading(true);
+    setLoading(true); // Start loading
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
         contents: `Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, ${selectedPreferences[2]}?`,
       });
-       // Simulate delay so users see loading animation
-      setTimeout(() => {
-        navigate("/results", { state: { response, selectedPreferences } });
-      }, 10000);
+  
+      navigate("/results", { state: { response, selectedPreferences } });
     } catch (error) {
       setLoading(false);
       console.error("Error fetching travel destinations:", error);
     }
   }
-
+  
+  // Show loading component if `loading` is true
   if (loading) {
     return <Loading />;
   }
+  
 
   return (
     <div className="set-options-viewport">
@@ -93,7 +107,7 @@ const SetOptions = () => {
       </div>
 
       <div className="set-options-selected mt-6 text-center text-white">
-        {selectedPreferences.length > 0 && (
+        {selectedPreferences.length >= 0 && (
           <div className="set-options-selected-options">
             <div className="text-xl font-semibold mb-2">
               Your Preferences: <p>{selectedPreferences.join(", ")}</p>

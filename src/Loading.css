@@ -20,6 +20,7 @@
   .plane {
     position: relative;
     animation: fly 6s linear infinite;
+    transform: rotate(30deg); /* Rotates the image 25 degrees to the right */
   }
   
   @keyframes fly {
