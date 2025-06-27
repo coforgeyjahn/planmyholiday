@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.00f019b0.css",
+    "main.js": "/static/js/main.68849641.js",
+    "static/media/creek.jpeg": "/static/media/creek.160d3c9abd76d32652ca.jpeg",
+    "static/media/logo.png": "/static/media/logo.4ca96b201e5027099be0.png",
+    "index.html": "/index.html",
+    "main.00f019b0.css.map": "/static/css/main.00f019b0.css.map",
+    "main.68849641.js.map": "/static/js/main.68849641.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.00f019b0.css",
+    "static/js/main.68849641.js"
+  ]
+}
