@@ -69,14 +69,40 @@ const SetOptions = () => {
     try {
       const response = await ai.models.generateContent({
         model: "gemini-2.5-flash",
-        contents: `Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, ${selectedPreferences[2]}?`,
-      });
-  
+        contents: `
+      Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, and ${selectedPreferences[2]}?
+      
+      Please format your response exactly like this, using markdown headings and bold titles:
+      
+      Please format your response exactly like this (using plain text, no markdown):
+
+      1. Destination Name
+      **${selectedPreferences[0]}**: A few sentences explaining why this destination is great for shopping.
+
+      **${selectedPreferences[1]}**: A few sentences explaining why this destination is culturally rich.
+
+      **${selectedPreferences[2]}**: A few sentences on how this destination offers relaxation opportunities.
+
+      **Why it fits**: A final paragraph tying all three together and explaining why this destination is a well-rounded match.
+
+      Repeat this exact format for destinations 2 and 3. Ensure each section is clearly labeled and written in a warm, informative tone. Do not use markdown or bullet points—just structured plain text.      
+      `.trim(),
+      });      
+
+      // 💾 Save to localStorage
+      localStorage.setItem("travelResponse", JSON.stringify(response));
+      localStorage.setItem("travelPreferences", JSON.stringify(selectedPreferences));
+
       navigate("/results", { state: { response, selectedPreferences } });
     } catch (error) {
       setLoading(false);
       console.error("Error fetching travel destinations:", error);
     }
+    finally {
+      // Hide loading only if you're not navigating away
+      setLoading(false);
+    }
+  
   }
   
   // Show loading component if `loading` is true
