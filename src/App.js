@@ -21,8 +21,8 @@ function Home() {
 
   return (
     <div className="App-container bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-      <header>
-      <button onClick={() => navigate("/holiday-blog")}>See some of my favorite destinations</button>
+      <header class="App-header-toprow">
+        <button className="App-button" onClick={() => navigate("/holiday-blog")}>See some of my favorite destinations</button>
       </header>
       <img src={earth} className="App-logo" alt="earth" />
         <div className="App-text">

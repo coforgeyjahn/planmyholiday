@@ -1,60 +1,153 @@
 import React, { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-/**
- * TravelBlogTemplate (Plain React + CSS)
- * ---------------------------------------------------------
- * A React template for a travel blog containing:
- * - Country headers
- * - Itineraries (things you did)
- * - Photo galleries for each location
- * - Scales nicely to 20+ locations with search and filters
- *
- * How to use:
- * 1) Replace LOCATIONS with your own data (at least 20 items supported).
- * 2) Add your photos and itineraries.
- * 3) Adjust CSS in the <style> block at the bottom.
- */
-
-// ---- 🔧 Sample Data (Replace with your own) ---------------------------------
-
 const LOCATIONS = [
   {
-    id: "tokyo-sensoji",
-    country: "Japan",
-    city: "Tokyo",
-    title: "Asakusa & Sensō-ji",
-    date: "2024-05-12",
+    id: "dubrovnik-croatia",
+    country: "Croatia",
+    city: "Dubrovnik",
+    title: "Dubrovnik",
+    date: "2025-08-25",
     itinerary: [
-      "Strolled Nakamise Shopping Street",
-      "Visited Sensō-ji Temple",
-      "Took a river cruise on Sumida",
+      {
+        day: 1,
+        activities: [
+          "Walking tour of Dubrovnik Old Town",
+          "Swimming and cliff jumping at Buza Bar",
+          "Night out at Revelin"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Cable car to Mount Srđ",
+          "Visit Lokrum Island",
+          "Dinner at Panorama Restaurant"
+        ]
+      }
     ],
     photos: [
-      "https://images.unsplash.com/photo-1558981285-6f0c94958bb6",
-      "https://images.unsplash.com/photo-1549692520-acc6669e2f0c",
+      require("./imgs/croatia0.jpeg"),
+      require("./imgs/croatia1.jpeg"),
+      require("./imgs/croatia2.jpeg"),
+      require("./imgs/croatia3.jpeg"),
     ],
   },
   {
-    id: "paris-louvre",
-    country: "France",
-    city: "Paris",
-    title: "The Louvre & Seine",
-    date: "2023-09-03",
+    id: "downtown-finland",
+    country: "Finland",
+    city: "Helsinki",
+    title: "Helsinki",
+    date: "2025-07-28",
     itinerary: [
-      "Morning at the Louvre",
-      "Picnic by the Seine",
-      "Twilight at Pont Alexandre III",
+      {
+        day: 1,
+        activities: [
+          "Exploring old town",
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Trip to Estonia Tallinn"
+        ]
+      }
     ],
     photos: [
       "https://images.unsplash.com/photo-1526045478516-99145907023c",
       "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba",
     ],
   },
-  // 👉 Add more locations here
+  {
+    id: "albania-tirana",
+    country: "Albania",
+    city: "Tirana",
+    title: "Tirana",
+    date: "2025-10-13",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Exploring Tirana, run around Tirana Lake",
+          "Irish Pub for Dinner and Drinks, Karaoke",
+          "Staying in Bearded Dad Hostel"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit the House of Leaves Spy Museum",
+          "Sightseeing at the mosque and pyramid",
+          "Lunch and drinks at Lake View Bar."
+        ]
+      },
+    ],
+    photos: [
+      require("./imgs/croatia0.jpeg"),
+      require("./imgs/croatia1.jpeg"),
+      require("./imgs/croatia2.jpeg"),
+      require("./imgs/croatia3.jpeg"),
+    ],
+  },
+  {
+    id: "albania-shkoder",
+    country: "Albania",
+    city: "Shkoder",
+    title: "Shkoder",
+    date: "2025-10-15",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Get city bus to Shkoder",
+          "Check into Hostel - Galley party hostel",
+          "Short hike to fortress on the hill"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Rent bikes and spend the day swimming at Shkoder Lake"
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/croatia0.jpeg"),
+      require("./imgs/croatia1.jpeg"),
+      require("./imgs/croatia2.jpeg"),
+      require("./imgs/croatia3.jpeg"),
+    ],
+  },
+  {
+    id: "albania-alps",
+    country: "Albania",
+    city: "Alps",
+    title: "Theth & Valbone",
+    date: "2025-10-17",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Get bus to Theth Village in the Albanian Alps",
+          "Leave on 7 hour/20k hike to Valbona",
+          "Check into accomodation, we stayed in a hut at Centre Park"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "FULL travel day back to Tirana - bus, then beautiful ferry ride, then bus",
+        ]
+      },
+    ],
+    photos: [
+      require("./imgs/croatia0.jpeg"),
+      require("./imgs/croatia1.jpeg"),
+      require("./imgs/croatia2.jpeg"),
+      require("./imgs/croatia3.jpeg"),
+    ],
+  },
 ];
-
-// ---- 🧰 Helpers -------------------------------------------------------------
 
 function groupByCountry(locations) {
   return locations.reduce((acc, loc) => {
@@ -65,25 +158,30 @@ function groupByCountry(locations) {
 }
 
 function uniqueCountries(locations) {
+  locations.map((l) => console.log("country : ", l.country))
   return Array.from(new Set(locations.map((l) => l.country))).sort();
 }
-
-// ---- 🖼️ Components ----------------------------------------------------------
 
 function LocationCard({ location }) {
   return (
     <div className="card">
       <h3>{location.title}</h3>
       <div className="meta">
-        <span>{location.country}</span> · <span>{location.city}</span> · <span>{new Date(location.date).toLocaleDateString()}</span>
+        <span>{location.country}</span> · <span>{location.city}</span> ·{" "}
+        <span>{new Date(location.date).toLocaleDateString()}</span>
       </div>
       <div>
         <h4>Itinerary</h4>
-        <ul>
-          {location.itinerary.map((step, i) => (
-            <li key={i}>{step}</li>
-          ))}
-        </ul>
+        {location.itinerary.map((dayPlan, i) => (
+          <div key={i}>
+            <strong>Day {dayPlan.day}:</strong>
+            <ul>
+              {dayPlan.activities.map((activity, j) => (
+                <li key={j}>{activity}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
       <div>
         <h4>Photos</h4>
@@ -136,8 +234,6 @@ function SearchBar({ query, setQuery }) {
   );
 }
 
-// ---- 🌎 Main App ------------------------------------------------------------
-
 export default function HolidayBlog() {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
@@ -179,20 +275,20 @@ export default function HolidayBlog() {
         setActiveCountries={setActiveCountries}
       />
 
-      <main>
-        {Object.entries(grouped).map(([country, list]) => (
-          <section key={country}>
-            <h2>{country}</h2>
-            <div className="grid">
-              {list.map((loc) => (
-                <LocationCard key={loc.id} location={loc} />
-              ))}
-            </div>
-          </section>
-        ))}
+        <main>
+          {Object.entries(grouped).map(([country, list]) => (
+            <section key={country}>
+              <h2>{country}</h2>
+              <div className="grid">
+                {list.map((loc) => (
+                  <LocationCard key={loc.id} location={loc} />
+                ))}
+              </div>
+            </section>
+          ))}
 
-        {filtered.length === 0 && <p>No results found.</p>}
-      </main>
+          {filtered.length === 0 && <p>No results found.</p>}
+        </main>
 
       <footer>
         <p>© {new Date().getFullYear()} My Travel Blog</p>
