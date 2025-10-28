@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { createApi } from "unsplash-js";
@@ -13,27 +13,19 @@ function Results() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  useEffect(() => {
-    const hasValidData = location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text &&
-                         location.state?.selectedPreferences?.length;
-  
-    if (!hasValidData) {
-      navigate("/", { replace: true });
-    }
-  }, [location.state, navigate]);
-
+  // --- Extract response & preferences safely ---
   const response =
-  location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
-  (() => {
-    try {
-      return JSON.parse(localStorage.getItem("travelResponse"));
-    } catch {
-      return null;
-    }
-  })();
+    location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
+    (() => {
+      try {
+        return JSON.parse(localStorage.getItem("travelResponse"));
+      } catch {
+        return null;
+      }
+    })();
 
   const preferences =
-  location.state?.selectedPreferences ||
+    location.state?.selectedPreferences ||
     (() => {
       try {
         return JSON.parse(localStorage.getItem("travelPreferences"));
@@ -42,73 +34,64 @@ function Results() {
       }
     })();
 
-  // Guard: If nothing is in state or localStorage, redirect
+  // --- Redirect if no valid data ---
   useEffect(() => {
-    if (!response || !preferences?.length) {
+    const hasValidData = response && preferences?.length;
+    if (!hasValidData) {
       navigate("/", { replace: true });
     }
   }, [response, preferences, navigate]);
 
+  // --- Destinations parsing ---
+  const destinations = useMemo(() => {
+    if (!response) return [];
+
+    const normalizedText = response.replace(/\r\n/g, "\n");
+    const matches = Array.from(
+      normalizedText.matchAll(/(\d+)\.\s(.+?)\n([\s\S]*?)(?=\n\d+\.|$)/g)
+    );
+
+    return matches.map((match, index) => ({
+      title: match[2]?.trim() || `Untitled Destination ${index + 1}`,
+      description: match[3]?.trim() || "No description available.",
+    }));
+  }, [response]);
+
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(true);
 
-  const destinations = useMemo(() => {
-    if (!response) {
-      console.error("Response text is empty or undefined.");
-      return [];
-    }
-
-
-    const normalizedText = response.replace(/\r\n/g, "\n"); // Normalize line endings
-
-    // Match: number + dot + space + title, then capture all text until next number + dot or end of string
-    const matches = Array.from(
-      normalizedText.matchAll(
-        /(\d+)\.\s(.+?)\n([\s\S]*?)(?=\n\d+\.|$)/g
-      )
-    );
-  
-    const extracted = matches.map((match, index) => ({
-      title: match[2]?.trim() || `Untitled Destination ${index + 1}`,
-      description: match[3]?.trim() || "No description available.",
-    }));  
-
-    setLoading(false); // Parsing is complete
-    return extracted;
-  }, [response]);
-
-  useEffect(() => {
-    if (destinations.length > 0) {
-      fetchImages();
-    }
-  }, [destinations]);
-
-  const fetchImages = async () => {
+  // --- fetchImages wrapped in useCallback ---
+  const fetchImages = useCallback(async () => {
     const imagePromises = destinations.map(async (destination) => {
       try {
-        const response = await unsplash.search.getPhotos({
+        const result = await unsplash.search.getPhotos({
           query: destination.title,
           page: 1,
           perPage: 1,
         });
-  
-        if (response.errors) {
-          console.error(`Error for ${destination.title}:`, response.errors[0]);
+        if (result.errors) {
+          console.error(`Error for ${destination.title}:`, result.errors[0]);
           return [destination.title, null];
         }
-  
-        const photo = response.response.results[0];
+        const photo = result.response.results[0];
         return [destination.title, photo?.urls?.regular || null];
       } catch (error) {
         console.error(`Error fetching image for ${destination.title}:`, error);
         return [destination.title, null];
       }
     });
-  
+
     const results = await Promise.all(imagePromises);
-    const newImages = Object.fromEntries(results);
-    setImages(newImages);
-  };
+    setImages(Object.fromEntries(results));
+    setLoading(false);
+  }, [destinations]);
+
+  // --- Trigger image fetching ---
+  useEffect(() => {
+    if (destinations.length > 0) {
+      fetchImages();
+    }
+  }, [destinations, fetchImages]);
 
   const handleClick = () => {
     navigate("/set-options");
@@ -123,10 +106,7 @@ function Results() {
   }
 
   return (
-    <div
-      className="results-rendering"
-      style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}
-    >
+    <div className="results-rendering" style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}>
       <button className="back-button" onClick={handleClick}>
         Go back and edit preferences
       </button>
@@ -173,11 +153,7 @@ function Results() {
           </div>
           <div>
             <p>Check out this awesome hostel site:</p>
-            <a 
-              href="https://www.hostelworld.com/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.hostelworld.com/" target="_blank" rel="noopener noreferrer">
               Visit Hostelworld
             </a>
           </div>
