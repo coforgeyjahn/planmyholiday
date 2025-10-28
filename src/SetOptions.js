@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import "./SetOptions.css";
 import { GoogleGenAI } from "@google/genai";
-import { REACT_APP_GOOGLE_API_KEY } from "./keys";
+import { MAP_API_KEY } from "./keys.js";
 import Loading from './Loading.js';
 
-const ai = new GoogleGenAI({ apiKey: REACT_APP_GOOGLE_API_KEY });
+const ai = new GoogleGenAI({ apiKey: MAP_API_KEY });
 
 const travelPreferences = [
   "Adventure",

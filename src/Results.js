@@ -3,10 +3,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { createApi } from "unsplash-js";
 import "./Results.css";
-import { REACT_APP_UNSPLASH_ACCESS_KEY } from "./keys";
+import { UNSPLASH_ACCESS_KEY } from "./keys";
 
 const unsplash = createApi({
-  accessKey: REACT_APP_UNSPLASH_ACCESS_KEY,
+  accessKey: UNSPLASH_ACCESS_KEY,
 });
 
 function Results() {
