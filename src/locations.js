@@ -963,6 +963,337 @@ const LOCATIONS = [
     ],
     photos: [
     ],
+  },
+  {
+    id: "venice-italy",
+    country: "Italy",
+    city: "Venice",
+    title: "Venice",
+    date: "2025-10-27",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Start at Piazza San Marco – visit St. Mark’s Basilica & climb the Campanile for views",
+          "Explore Doge’s Palace & cross the Bridge of Sighs",
+          "Walk along the Grand Canal to Rialto Bridge, browse local shops and markets",
+          "Evening gondola ride or Vaporetto down the canal, dinner at Osteria alle Testiere or Trattoria Al Gatto Nero on Burano"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit Murano Island – see glassblowing demonstrations",
+          "Stop by colorful Burano Island for photos & seafood lunch",
+          "Return to Venice to explore Dorsoduro district & Peggy Guggenheim Collection",
+          "Sunset at the Accademia Bridge, dinner & Aperol spritz at Campo Santa Margherita"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "rome-italy",
+    country: "Italy",
+    city: "Rome",
+    title: "Rome",
+    date: "2025-10-30",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Visit the Colosseum and Roman Forum — explore ancient ruins & history",
+          "Walk up to Palatine Hill for panoramic city views",
+          "Lunch in Monti neighborhood (try La Taverna dei Fori Imperiali)",
+          "Evening stroll to Piazza Venezia & Trevi Fountain — toss a coin!",
+          "Dinner & drinks in Trastevere — lively local nightlife"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Morning at the Vatican Museums, Sistine Chapel, and St. Peter’s Basilica",
+          "Climb St. Peter’s Dome for incredible views",
+          "Cross the Tiber River to Castel Sant’Angelo",
+          "Dinner near Campo de’ Fiori or Piazza Navona — try local pasta like cacio e pepe or carbonara"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Visit the Pantheon and Piazza Navona in the morning",
+          "Explore Villa Borghese Gardens & Galleria Borghese (book ahead!)",
+          "Walk down Via del Corso for shopping & coffee at Tazza d’Oro",
+          "Sunset at the Spanish Steps, aperitivo nearby at Hotel Hassler terrace"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "salerno-italy",
+    country: "Italy",
+    city: "Salerno",
+    title: "Salerno & Pompeii",
+    date: "2025-11-02",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Stroll the Lungomare Trieste promenade along the sea",
+          "Explore Salerno’s Old Town — visit the medieval Salerno Cathedral",
+          "Walk up to Castello di Arechi for panoramic views",
+          "Dinner & drinks in the historic center — try Osteria Canali or Ristorante Cicirinella"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Day trip to Pompeii (30 min by train) — explore the ruins & Mount Vesuvius views",
+          "Optional stop at Herculaneum if time allows",
+          "Return to Salerno for gelato by the waterfront",
+          "Relaxed evening at a wine bar or seafood dinner overlooking the harbor"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "ibiza-spain",
+    country: "Spain",
+    city: "Ibiza",
+    title: "Ibiza",
+    date: "2025-06-20",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Rent a motorbike and explore hidden beaches (Cala Comte, Cala Bassa, Cala d’Hort)",
+          "Cliff jumping and swimming near Es Vedrà viewpoint",
+          "Lunch at Sunset Ashram or Cotton Beach Club",
+          "Sunset drinks at Café del Mar, then night out at Ushuaïa or Hi Ibiza"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Morning walk through Dalt Vila (Ibiza Old Town) — UNESCO World Heritage site",
+          "Explore local markets like Las Dalias or Punta Arabí (if open)",
+          "Swim at Talamanca Beach or chill at Cala Tarida",
+          "Dinner at La Oliva, relaxed drinks at a beach bar"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "barcelona-spain",
+    country: "Spain",
+    city: "Barcelona",
+    title: "Barcelona",
+    date: "2025-06-24",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Walk along La Rambla & visit the Boqueria Market",
+          "Explore the Gothic Quarter & Barcelona Cathedral",
+          "Relax at Barceloneta Beach",
+          "Dinner at El Xampanyet, drinks in El Born"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit La Sagrada Família (book ahead!)",
+          "Walk through Passeig de Gràcia – see Casa Batlló & La Pedrera",
+          "Park Güell for Gaudí’s colorful mosaics & city views",
+          "Evening tapas crawl in Gràcia or Poble-sec"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Day trip to Montjuïc – cable car, castle, and Magic Fountain",
+          "Picasso Museum or Museu Nacional d’Art de Catalunya",
+          "Sunset drinks at Bunkers del Carmel viewpoint",
+          "Nightlife in Eixample or Razzmatazz Club"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "seville-spain",
+    country: "Spain",
+    city: "Seville",
+    title: "Seville",
+    date: "2025-06-28",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Visit Seville Cathedral & climb La Giralda Tower",
+          "Explore the Royal Alcázar Palace and its gardens",
+          "Lunch in Santa Cruz district",
+          "Evening tapas & flamenco show at Casa de la Memoria"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Plaza de España & Maria Luisa Park",
+          "Metropol Parasol (Las Setas) for city views",
+          "Triana neighborhood for ceramics & tapas",
+          "Drinks along the Guadalquivir River"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Morning stroll around Alameda de Hércules",
+          "Museo de Bellas Artes or Palacio de las Dueñas",
+          "Afternoon siesta & coffee at La Cacharrería",
+          "Dinner at El Rinconcillo (oldest bar in Seville) & late drinks at Terraza EME"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "prague-czechia",
+    country: "Czechia",
+    city: "Prague",
+    title: "Prague (Christmas Season)",
+    date: "2025-12-10",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Walk across Charles Bridge at sunrise — incredible views of Prague Castle",
+          "Explore Old Town Square & Astronomical Clock",
+          "Visit the Prague Christmas Markets (Old Town & Wenceslas Square) — try trdelník & hot wine",
+          "Climb Old Town Hall Tower for sunset views over the markets",
+          "Dinner & Czech beer at Lokál Dlouhááá or Mlejnice"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Morning at Prague Castle — St. Vitus Cathedral, Golden Lane, and Royal Palace",
+          "Walk down to Mala Strana & Lennon Wall",
+          "Afternoon coffee at Café Savoy or Café Louvre",
+          "Evening river cruise or drinks at Hemingway Bar",
+          "Optional: Visit the smaller Christmas market at Prague Castle or Náměstí Míru"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "vienna-austria-christmas",
+    country: "Austria",
+    city: "Vienna",
+    title: "Vienna (Christmas Season)",
+    date: "2025-12-14",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Start at Schönbrunn Palace — explore the palace & its charming Christmas market",
+          "Stroll through the MuseumQuartier & Maria-Theresien-Platz Christmas Market",
+          "Visit St. Stephen’s Cathedral & walk along Graben and Kärntner Strasse for lights and shopping",
+          "Evening: Vienna State Opera performance or classical concert at Musikverein",
+          "Warm drinks & dessert at Café Sacher (famous for Sachertorte!)"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit Hofburg Palace & Imperial Treasury",
+          "Explore Belvedere Palace & its art museum (Klimt’s *The Kiss*) + Christmas Market in the gardens",
+          "Lunch at Naschmarkt — great local & international food stalls",
+          "Late afternoon ice skating at Rathausplatz & Christmas Market at Vienna City Hall",
+          "Dinner & drinks nearby or rooftop bar like Das Loft for city views"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "bratislava-slovakia-christmas",
+    country: "Slovakia",
+    city: "Bratislava",
+    title: "Bratislava (Christmas Season)",
+    date: "2025-12-12",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore Bratislava Old Town — Main Square, Primatial Palace, and St. Michael’s Gate",
+          "Visit the Main Christmas Market at Hlavné námestie — try lokše (potato pancakes) & mulled wine",
+          "Walk up to Bratislava Castle for panoramic views over the city and Danube River",
+          "Evening drinks at Sky Bar or UFO Tower Bar for amazing city lights",
+          "Optional: casual dinner & beer at Slovak Pub (local food + warm atmosphere)"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Morning stroll along the Danube promenade & visit the Blue Church",
+          "Visit the Old Town Christmas Market again or Hviezdoslav Square for live music and crafts",
+          "Check out the Nedbalka Gallery or the Museum of City History",
+          "Afternoon café stop at Urban House or Mondieu for coffee & sweets",
+          "Evening: cozy wine bar in the Old Town or winter night walk by the castle"
+        ],
+      },
+    ],
+    photos: [
+    ],
+  },
+  {
+    id: "mostar-bosnia-herzegovina",
+    country: "Bosnia & Herzegovina",
+    city: "Mostar",
+    title: "Mostar",
+    date: "2025-09-04",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Walk the iconic Stari Most (Old Bridge) & watch local divers jump into the Neretva River",
+          "Explore the Old Bazaar (Kujundžiluk) — cobblestone lanes, shops & cafés",
+          "Visit Koski Mehmed Pasha Mosque — climb the minaret for the best bridge view",
+          "Lunch or dinner by the river at Hindin Han or Sadrvan (local Bosnian cuisine)",
+          "Evening drinks near the bridge — riverside bars lit up at night"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Morning visit to the Old Bridge Museum & War Photo Exhibition",
+          "Take a short trip to Blagaj Tekke — Dervish monastery by a cliff spring",
+          "Visit Kravice Waterfalls for swimming or photos (about 45 min away)",
+          "Return to Mostar for sunset walk along the Neretva & dinner in the Old Town",
+          "Optional: Chill at Black Dog Pub or Craft Beer Garden for local brews"
+        ],
+      },
+    ],
+    photos: [
+    ],
   }
   
 ];
