@@ -88,6 +88,8 @@ const LOCATIONS = [
     city: "Tirana",
     title: "Tirana",
     date: "2025-10-13",
+    accomodation: "The Bearded Dad Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Bearded-Dad-Hostel/Tirana/313345",
     itinerary: [
       {
         day: 1,
@@ -107,6 +109,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/albania/tirana0.jpeg"),
+      require("./imgs/albania/tirana1.jpeg"),
+      require("./imgs/albania/tirana2.jpeg"),
+      require("./imgs/albania/tirana3.jpeg"),
     ],
   },
   {
@@ -115,6 +121,8 @@ const LOCATIONS = [
     city: "Shkoder",
     title: "Shkoder",
     date: "2025-10-15",
+    accomodation: "Galley Party Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Galley-Party-Hostel-Social-Solo-Travellers-Day-Tours/Shkoder/315294",
     itinerary: [
       {
         day: 1,
@@ -130,6 +138,43 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/albania/shkoder0.jpeg"),
+      require("./imgs/albania/shkoder1.jpeg"),
+      require("./imgs/albania/shkoder2.jpeg"),
+      require("./imgs/albania/shkoder3.jpeg"),
+
+    ],
+  },
+  {
+    id: "albania-alps",
+    country: "Albania",
+    city: "Alps",
+    title: "Theth & Valbone",
+    date: "2025-10-17",
+    accomodation: "CNTR Park Hotel",
+    accomodationlink: "https://www.booking.com/hotel/al/cnt-park-valbona.en-gb.html",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Get bus to Theth Village in the Albanian Alps",
+          "Leave on 7 hour/20k hike to Valbona",
+          "Check into accomodation, we stayed in a hut at Centre Park",
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "FULL travel day back to Tirana - bus, then beautiful ferry ride, then bus",
+        ],
+      },
+    ],
+    photos: [
+      require("./imgs/albania/valbone0.jpeg"),
+      require("./imgs/albania/valbone1.jpeg"),
+      require("./imgs/albania/valbone2.jpeg"),
+      require("./imgs/albania/valbone3.jpeg"),
+      require("./imgs/albania/valbone4.jpeg"),
     ],
   },
   {
@@ -211,31 +256,6 @@ const LOCATIONS = [
       require("./imgs/vietnam/hagiang8.jpeg"),
       require("./imgs/vietnam/hagiang7.jpeg"),
       require("./imgs/vietnam/hagiang5.jpeg"),
-    ],
-  },
-  {
-    id: "albania-alps",
-    country: "Albania",
-    city: "Alps",
-    title: "Theth & Valbone",
-    date: "2025-10-17",
-    itinerary: [
-      {
-        day: 1,
-        activities: [
-          "Get bus to Theth Village in the Albanian Alps",
-          "Leave on 7 hour/20k hike to Valbona",
-          "Check into accomodation, we stayed in a hut at Centre Park",
-        ],
-      },
-      {
-        day: 2,
-        activities: [
-          "FULL travel day back to Tirana - bus, then beautiful ferry ride, then bus",
-        ],
-      },
-    ],
-    photos: [
     ],
   },
   {
@@ -359,6 +379,8 @@ const LOCATIONS = [
     city: "Iceland",
     title: "Iceland",
     date: "2024-03-28",
+    accomodation: "KEX Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/KEX-Hostel-and-Hotel/Reykjavik/48573",
     itinerary: [
       {
         day: 1,
@@ -386,6 +408,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/iceland/iceland0.jpeg"),
+      require("./imgs/iceland/iceland1.jpeg"),
+      require("./imgs/iceland/iceland2.jpeg"),
+      require("./imgs/iceland/iceland3.jpeg"),
     ],
   },
   {
