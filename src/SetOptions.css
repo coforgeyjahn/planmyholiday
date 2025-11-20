@@ -18,6 +18,35 @@ html, body, #root {
   margin: 0 auto; /* Center container horizontally */
 }
 
+.home-bubble {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  padding: 10px 18px;
+  background: white;
+
+  border-radius: 9999px;
+  font-size: 1.3rem;       /* ⬅︎ enlarge arrow + text */
+  font-weight: 600;
+
+  cursor: pointer;
+  border: none;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.home-bubble:hover {
+  transform: scale(1.12);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-bubble span.arrow {
+  font-size: 1.7rem;
+  margin-right: 4px;
+}
+
 /* Main Viewport Container */
 .set-options-viewport {
   display: flex;

@@ -64,6 +64,10 @@ const SetOptions = () => {
 
   const isSelected = (preference) => selectedPreferences.includes(preference);
 
+  const returnHome = () => {
+    navigate("/");
+  }
+
   async function findTravelDestinations() {
     setLoading(true); // Start loading
     try {
@@ -113,6 +117,9 @@ const SetOptions = () => {
 
   return (
     <div className="set-options-viewport">
+      <button className="home-bubble" onClick={returnHome}>
+        <span className="arrow">⇦</span> Home
+      </button>      
       <h1 className="prompt">Pick Your Top 3 Priorities for Your Next Holiday</h1>
       <div className="bubbles-container">
         {travelPreferences.map((preference, index) => (
