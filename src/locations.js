@@ -24,10 +24,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
+      require("./imgs/croatia/croatia0.jpeg"),
+      require("./imgs/croatia/croatia1.jpeg"),
+      require("./imgs/croatia/croatia2.jpeg"),
+      require("./imgs/croatia/croatia3.jpeg"),
     ],
   },
   {
@@ -55,10 +55,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
+      require("./imgs/croatia/croatia0.jpeg"),
+      require("./imgs/croatia/croatia1.jpeg"),
+      require("./imgs/croatia/croatia2.jpeg"),
+      require("./imgs/croatia/croatia3.jpeg"),
     ],
   },
   {
@@ -107,10 +107,6 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
     ],
   },
   {
@@ -134,52 +130,87 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
     ],
   },
   {
     id: "vietnam-hanoi",
     country: "Vietnam",
-    city: "hanoi",
+    city: "Hanoi",
     title: "Hanoi",
     date: "2023-04-23",
+    accomodation: "Global Backpackers Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Global-Backpackers-Hostel/Hanoi/319717",
     itinerary: [
-      {
+     {
         day: 1,
-        activities: ["Check out Post-it cafe", "Try Bahn Mi!"],
+        activities: [
+          "Explore the Old Quarter — narrow lanes, street food, cafés",
+          "Get Breakfast Banh Mi at the Post-It Cafe",
+          "Visit Hoan Kiem Lake & Ngoc Son Temple",
+          "Egg coffee at Café Giang (famous origin spot!)",
+          "St. Joseph’s Cathedral + nearby restaurants",
+          "Evening: Train Street (timed visits) for a drink as the train passes"
+        ],
       },
       {
         day: 2,
         activities: [
-          "Free walking tour, learn about the history of the Vietnam War",
-          "Visit the island in the middle of the lake and see the beautiful temples",
+          "Visit Ho Chi Minh Mausoleum Complex & Presidential Palace",
+          "Temple of Literature (Confucian history + beautiful courtyards)",
+          "Lunch at Bun Cha Huong Lien (Obama Bun Cha)",
+          "Walk the French Quarter — Opera House & boulevards",
+          "Night: Water Puppet Show or craft beer near the Old Quarter"
         ],
-      },
+    }],
+    photos: [
+      require("./imgs/vietnam/hanoi0.jpeg"),
+      require("./imgs/vietnam/hanoi1.jpeg"),
+      require("./imgs/vietnam/hanoi2.jpeg"),
     ],
-    photos: [],
   },
   {
     id: "vietnam-ha-giang",
     country: "Vietnam",
-    city: "ha giang",
+    city: "Ha Giang Loop",
     title: "Ha Giang",
     date: "2023-04-25",
+    accomodation: "Jasmine tours",
+    accomodationlink: "https://jasminehagiang.com/",
     itinerary: [
       {
         day: 1,
         activities: [
-          "Book with tour group so all activities and accomodation are included. Also recommend booking with easy rider so you can fully take in the magic of Northern Vietnam.",
+          "Start in Ha Giang → Quan Ba Heaven’s Gate (incredible mountain pass views)",
+          "Visit the Twin Mountains viewpoint",
+          "Ride through Tam Son & Yen Minh pine forests",
+          "Arrive in Dong Van town — relax, explore market, dinner with your homestay"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Ride the legendary Ma Pi Leng Pass — the most famous viewpoint on the loop",
+          "Optional boat ride on the Nho Que River (turquoise canyon water)",
+          "Continue to Meo Vac — winding cliff-edge roads & small villages",
+          "Overnight in Meo Vac or Du Gia (depending on loop route)"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Ride through green valleys and rice terraces toward Du Gia",
+          "Stop at Du Gia Waterfall for a swim",
+          "Local lunch in a Tay village",
+          "Return to Ha Giang City by afternoon",
+          "Evening bus back to Hanoi (common option)"
         ],
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
+      require("./imgs/vietnam/hagiang0.jpeg"),
+      require("./imgs/vietnam/hagiang8.jpeg"),
+      require("./imgs/vietnam/hagiang7.jpeg"),
+      require("./imgs/vietnam/hagiang5.jpeg"),
     ],
   },
   {
@@ -205,10 +236,6 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
     ],
   },
   {
@@ -359,10 +386,6 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia0.jpeg"),
-      require("./imgs/croatia1.jpeg"),
-      require("./imgs/croatia2.jpeg"),
-      require("./imgs/croatia3.jpeg"),
     ],
   },
   {

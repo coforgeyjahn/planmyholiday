@@ -25,6 +25,11 @@ function LocationCard({ location }) {
       </div>
       <div>
         <h4>Itinerary</h4>
+        {location.accomodation && (
+          <h5>
+            Book with: <a href={location.accomodationlink}>{location.accomodation}</a>
+          </h5>
+        )}
         {location.itinerary.map((dayPlan, i) => (
           <div key={i}>
             <strong>Day {dayPlan.day}:</strong>
