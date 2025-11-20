@@ -679,6 +679,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/hungary/budapest0.jpeg"),
+      require("./imgs/hungary/budapest1.jpeg"),
+      require("./imgs/hungary/budapest2.jpeg"),
+      require("./imgs/hungary/budapest3.jpeg"),
     ],
   },
   {
