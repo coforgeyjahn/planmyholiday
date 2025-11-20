@@ -420,6 +420,8 @@ const LOCATIONS = [
     city: "Copenhagen",
     title: "Denmark",
     date: "2024-04-21",
+    accomodation: "Next House Copenhagen",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Next-House-Copenhagen/Copenhagen/310761",
     itinerary: [
       {
         day: 1,
@@ -447,7 +449,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/denmark/copenhagen0.jpeg"),
+      require("./imgs/denmark/copenhagen1.jpeg"),
+      require("./imgs/denmark/copenhagen4.jpeg"),
+      require("./imgs/denmark/copenhagen3.jpeg"),
+    ],
   },
   {
     id: "france-marseille",
@@ -476,7 +483,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/france/marseille0.jpeg"),
+      require("./imgs/france/marseille1.jpeg"),
+      require("./imgs/france/marseille2.jpeg"),
+      require("./imgs/france/marseille3.jpeg"),
+    ],
   },
   {
     id: "paris-france",
@@ -505,8 +517,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34",
-      "https://images.unsplash.com/photo-1508057198894-247b23fe5ade",
+      require("./imgs/france/paris1.jpeg"),
+      require("./imgs/france/paris2.jpeg"),
+      require("./imgs/france/paris0.jpeg"),
+      require("./imgs/france/paris4.jpeg"),
     ],
   },
   {
@@ -535,7 +549,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/france/strasbourg0.jpeg"),
+      require("./imgs/france/strasbourg1.jpeg"),
+      require("./imgs/france/strasbourg2.jpeg"),
+      require("./imgs/france/strasbourg3.jpeg"),
+    ],
   },
   {
     id: "chamonix-france",
@@ -570,7 +589,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/france/chamonix0.jpeg"),
+      require("./imgs/france/chamonix1.jpeg"),
+      require("./imgs/france/chamonix2.jpeg"),
+      require("./imgs/france/chamonix3.jpeg"),
+    ],
   },
   {
     id: "valletta-malta",
@@ -684,35 +708,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-    ],
-  },
-  {
-    id: "vienna-austria",
-    country: "Austria",
-    city: "Vienna",
-    title: "Vienna",
-    date: "2025-07-19",
-    itinerary: [
-      {
-        day: 1,
-        activities: [
-          "Schönbrunn Palace & Gardens – tour the imperial rooms and explore the vast grounds",
-          "Visit Karlskirche and take the elevator up for panoramic views",
-          "Stroll the Ringstrasse – admire the State Opera, Parliament, and City Hall",
-          "Evening: Classic concert or opera at Musikverein or Vienna State Opera, followed by drinks at Loos Bar"
-        ],
-      },
-      {
-        day: 2,
-        activities: [
-          "Visit Belvedere Palace – see Klimt’s ‘The Kiss’",
-          "Naschmarkt – browse food stalls and have lunch at Neni or Tewa",
-          "Explore the MuseumsQuartier (Leopold Museum or MUMOK)",
-          "Nightlife in Neubau district – cool cocktail bars or rooftop drinks at Das Loft"
-        ],
-      },
-    ],
-    photos: [
+      require("./imgs/slovakia/bratislava0.jpeg"),
+      require("./imgs/slovakia/bratislava1.jpeg"),
+      require("./imgs/slovakia/bratislava2.jpeg"),
+      require("./imgs/slovakia/bratislava3.jpeg"),
     ],
   },
   {
@@ -742,6 +741,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/czechia/prague0.jpeg"),
+      require("./imgs/czechia/prague1.jpeg"),
+      require("./imgs/czechia/prague2.jpeg"),
+      require("./imgs/czechia/prague4.jpeg"),
     ],
   },
   {
@@ -1221,37 +1224,6 @@ const LOCATIONS = [
     ],
   },
   {
-    id: "prague-czechia",
-    country: "Czechia",
-    city: "Prague",
-    title: "Prague (Christmas Season)",
-    date: "2025-12-10",
-    itinerary: [
-      {
-        day: 1,
-        activities: [
-          "Walk across Charles Bridge at sunrise — incredible views of Prague Castle",
-          "Explore Old Town Square & Astronomical Clock",
-          "Visit the Prague Christmas Markets (Old Town & Wenceslas Square) — try trdelník & hot wine",
-          "Climb Old Town Hall Tower for sunset views over the markets",
-          "Dinner & Czech beer at Lokál Dlouhááá or Mlejnice"
-        ],
-      },
-      {
-        day: 2,
-        activities: [
-          "Morning at Prague Castle — St. Vitus Cathedral, Golden Lane, and Royal Palace",
-          "Walk down to Mala Strana & Lennon Wall",
-          "Afternoon coffee at Café Savoy or Café Louvre",
-          "Evening river cruise or drinks at Hemingway Bar",
-          "Optional: Visit the smaller Christmas market at Prague Castle or Náměstí Míru"
-        ],
-      },
-    ],
-    photos: [
-    ],
-  },
-  {
     id: "vienna-austria-christmas",
     country: "Austria",
     city: "Vienna",
@@ -1280,37 +1252,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-    ],
-  },
-  {
-    id: "bratislava-slovakia-christmas",
-    country: "Slovakia",
-    city: "Bratislava",
-    title: "Bratislava (Christmas Season)",
-    date: "2025-12-12",
-    itinerary: [
-      {
-        day: 1,
-        activities: [
-          "Explore Bratislava Old Town — Main Square, Primatial Palace, and St. Michael’s Gate",
-          "Visit the Main Christmas Market at Hlavné námestie — try lokše (potato pancakes) & mulled wine",
-          "Walk up to Bratislava Castle for panoramic views over the city and Danube River",
-          "Evening drinks at Sky Bar or UFO Tower Bar for amazing city lights",
-          "Optional: casual dinner & beer at Slovak Pub (local food + warm atmosphere)"
-        ],
-      },
-      {
-        day: 2,
-        activities: [
-          "Morning stroll along the Danube promenade & visit the Blue Church",
-          "Visit the Old Town Christmas Market again or Hviezdoslav Square for live music and crafts",
-          "Check out the Nedbalka Gallery or the Museum of City History",
-          "Afternoon café stop at Urban House or Mondieu for coffee & sweets",
-          "Evening: cozy wine bar in the Old Town or winter night walk by the castle"
-        ],
-      },
-    ],
-    photos: [
+      require("./imgs/austria/vienna0.jpeg"),
+      require("./imgs/austria/vienna4.jpeg"),
+      require("./imgs/austria/vienna2.jpeg"),
+      require("./imgs/austria/vienna3.jpeg"),
     ],
   },
   {
@@ -1342,6 +1287,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/bosnia/mostar0.jpeg"),
+      require("./imgs/bosnia/mostar1.jpeg"),
+      require("./imgs/bosnia/mostar2.jpeg"),
+      require("./imgs/bosnia/mostar3.jpeg"),
     ],
   }
   
