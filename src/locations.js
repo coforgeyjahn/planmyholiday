@@ -70,18 +70,60 @@ const LOCATIONS = [
     itinerary: [
       {
         day: 1,
-        activities: ["Exploring old town"],
+        activities: [
+          "Explore Senate Square & Helsinki Cathedral — iconic white landmark",
+          "Walk to Market Square and try local treats at the Old Market Hall",
+          "Ferry to Suomenlinna Sea Fortress — wander historic walls & sea viewpoints",
+          "Relax at Löyly or Allas Sea Pool — Finnish sauna by the water",
+          "Dinner in the Design District and an evening stroll through Punavuori"
+        ]
       },
       {
         day: 2,
-        activities: ["Trip to Estonia Tallinn"],
-      },
+        activities: [
+          "Visit Temppeliaukio (Rock Church) built directly into natural stone",
+          "Walk Esplanadi Park → cafes, architecture, and boutique shops",
+          "Explore Oodi Central Library — stunning modern architecture",
+          "Kiasma Museum of Contemporary Art or Ateneum (classic works)",
+          "End the day with sunset by the harbor or dinner in Kallio"
+        ]
+      }
     ],
     photos: [
-      "https://images.unsplash.com/photo-1526045478516-99145907023c",
-      "https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba",
+      require("./imgs/finland/helsinki0.jpeg"),
+      require("./imgs/finland/helsinki1.jpeg"),
+      require("./imgs/finland/helsinki2.jpeg"),
+      require("./imgs/finland/helsinki3.jpeg"),
     ],
   },
+  {
+    id: "tallinn-estonia",
+    country: "Estonia",
+    city: "Tallinn",
+    title: "Tallinn",
+    date: "2025-03-15",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore Tallinn Old Town — start at Town Hall Square and wander cobblestone streets",
+          "Walk up Toompea Hill for views from Kohtuotsa and Patkuli viewing platforms",
+          "Visit Alexander Nevsky Cathedral & Toompea Castle",
+          "Lunch in the Old Town (try traditional Estonian food)",
+          "Walk the City Walls near Hellemann Tower",
+          "Visit Kalamaja district → cafes, wooden houses, and the Telliskivi Creative City",
+          "Sunset at Lennusadam Seaplane Harbour waterfront"
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/estonia/tallinn0.jpeg"),
+      require("./imgs/estonia/tallinn1.jpeg"),
+      require("./imgs/estonia/tallinn2.jpeg"),
+      require("./imgs/estonia/tallinn3.jpeg"),
+    ]
+  },
+  
   {
     id: "albania-tirana",
     country: "Albania",
@@ -371,7 +413,13 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/aussie/aus0.jpeg"),
+      require("./imgs/aussie/aus1.jpeg"),
+      require("./imgs/aussie/aus2.jpeg"),
+      require("./imgs/aussie/aus3.jpeg"),
+      require("./imgs/aussie/aus4.jpeg"),
+    ],
   },
   {
     id: "iceland",
@@ -622,7 +670,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/malta/valletta0.jpeg"),
+      require("./imgs/malta/valletta1.jpeg"),
+      require("./imgs/malta/valletta2.jpeg"),
+      require("./imgs/malta/valletta3.jpeg"),
+    ],
   },
   {
     id: "gozo-malta",
@@ -650,7 +703,12 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [],
+    photos: [
+      require("./imgs/malta/gozo0.jpeg"),
+      require("./imgs/malta/gozo1.jpeg"),
+      require("./imgs/malta/gozo2.jpeg"),
+      require("./imgs/malta/gozo3.jpeg"),
+    ],
   },
   {
     id: "budapest-hungary",
@@ -785,7 +843,10 @@ const LOCATIONS = [
       }
     ],
     photos: [
-
+      require("./imgs/costa_rica/jaco0.jpeg"),
+      require("./imgs/costa_rica/jaco1.jpeg"),
+      require("./imgs/costa_rica/jaco2.jpeg"),
+      require("./imgs/costa_rica/jaco3.jpeg")
     ]
   },
   {
@@ -824,7 +885,8 @@ const LOCATIONS = [
       },
     ],
     photos: [
-
+      "https://images.unsplash.com/photo-1664532869454-53ac5942d959",
+      "https://images.unsplash.com/photo-1541530722192-d0a5e8b65811"
     ]
   },
   {
@@ -854,36 +916,40 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      "https://images.unsplash.com/photo-1666606654465-675d553fd218",
+      "https://images.unsplash.com/photo-1687698328566-683e7398996e"
     ]
   },
   {
-    id: "liberia-costa-rica",
+    id: "la-cruz-costa-rica",
     country: "Costa Rica",
-    city: "Liberia",
-    title: "Liberia & Guanacaste",
+    city: "La Cruz",
+    title: "La Cruz",
     date: "2025-10-18",
-    itinerary: [
-      {
-        day: 1,
-        activities: [
-          "Explore Rincon de la Vieja National Park – volcanic mud pots, waterfalls, and hiking trails",
-          "Swim at Oropendola Waterfall or relax in hot springs nearby",
-          "Lunch at a local soda or Hacienda Guachipelín Lodge",
-          "Evening: back to Liberia town – dinner at Café Liberia or Maria Juana Restaurant"
-        ],
-      },
-      {
-        day: 2,
-        activities: [
-          "Day trip to Playa Hermosa or Playa del Coco – beaches, snorkeling, and beach bars",
-          "Try jet skiing, paddleboarding, or take a catamaran cruise along the coast",
-          "Lunch beachside at Father Rooster or Maracuya Beach Club",
-          "Sunset drinks & seafood dinner – Jolly Roger or Zi Lounge in Playas del Coco"
-        ],
-      },
-    ],
+    itinerary: [{
+      day: 1,
+      activities: [
+        "Relax at Playa Rajada (Playa El Jobo) — soft sand, turquoise water, quiet beach time",
+        "Coastal walk with ocean viewpoints near Playa Rajada",
+        "Lunch in La Cruz town at a local soda",
+        "Visit Mirador de La Cruz for panoramic coastline views",
+        "Sunset walk at Playa Papaturro"
+      ]
+    },
+    {
+      day: 2,
+      activities: [
+        "Hike in Área de Conservación Guanacaste — Sector Santa Elena or Murciélago",
+        "Picnic lunch in nature",
+        "Relax at Playa Soley — wide, unspoiled, peaceful beach",
+        "Slow afternoon at your lodge (hammock time, reading, pool)",
+        "Return to Playa Rajada or Papaturro for sunset and dinner"
+      ]
+    }],
     photos: [
-
+      require("./imgs/costa_rica/la_cruz0.jpeg"),
+      require("./imgs/costa_rica/la_cruz1.jpeg"),
+      require("./imgs/costa_rica/la_cruz2.jpeg"),
     ]
   },
   {
@@ -913,6 +979,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/nicaragua/nicaragua0.jpeg"),
+      require("./imgs/nicaragua/nicaragua1.jpeg"),
+      require("./imgs/nicaragua/nicaragua2.jpeg"),
+      require("./imgs/nicaragua/nicaragua3.jpeg")
     ],
   },
   {
@@ -951,6 +1021,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/mexico/cdmx0.jpeg"),
+      require("./imgs/mexico/cdmx1.jpeg"),
+      require("./imgs/mexico/cdmx2.jpeg"),
+      require("./imgs/mexico/cdmx3.jpeg"),
     ],
   },
   {
@@ -980,6 +1054,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/mexico/rosarito0.jpeg"),
+      require("./imgs/mexico/rosarito1.jpeg"),
+      require("./imgs/mexico/rosarito2.jpeg"),
+      require("./imgs/mexico/rosarito3.jpeg"),
     ],
   },
   {
@@ -1018,6 +1096,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/mexico/cancun0.jpeg"),
+      require("./imgs/mexico/cancun1.jpeg"),
+      require("./imgs/mexico/cancun2.jpeg"),
+      require("./imgs/mexico/cancun3.jpeg"),
     ],
   },
   {
@@ -1052,6 +1134,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/italy/venice0.jpeg"),
+      require("./imgs/italy/venice1.jpeg"),
+      require("./imgs/italy/venice2.jpeg"),
+      require("./imgs/italy/venice3.jpeg"),
     ],
   },
   {
@@ -1091,6 +1177,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/italy/rome0.jpeg"),
+      require("./imgs/italy/rome1.jpeg"),
+      require("./imgs/italy/rome2.jpeg"),
+      require("./imgs/italy/rome3.jpeg"),
     ],
   },
   {
@@ -1120,6 +1210,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/italy/salerno0.jpeg"),
+      require("./imgs/italy/salerno1.jpeg"),
+      require("./imgs/italy/salerno2.jpeg"),
+      require("./imgs/italy/salerno3.jpeg"),
     ],
   },
   {
@@ -1149,6 +1243,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/spain/ibiza0.jpeg"),
+      require("./imgs/spain/ibiza1.jpeg"),
+      require("./imgs/spain/ibiza2.jpeg"),
+      require("./imgs/spain/ibiza3.jpeg")
     ],
   },
   {
@@ -1187,6 +1285,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/spain/barcelona0.jpeg"),
+      require("./imgs/spain/barcelona1.jpeg"),
+      require("./imgs/spain/barcelona2.jpeg"),
+      require("./imgs/spain/barcelona3.jpeg"),
     ],
   },
   {
@@ -1225,6 +1327,9 @@ const LOCATIONS = [
       },
     ],
     photos: [
+      require("./imgs/spain/seville0.jpeg"),
+      require("./imgs/spain/seville1.jpeg"),
+      require("./imgs/spain/seville2.jpeg"),
     ],
   },
   {
