@@ -24,10 +24,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia/croatia0.jpeg"),
-      require("./imgs/croatia/croatia1.jpeg"),
-      require("./imgs/croatia/croatia2.jpeg"),
-      require("./imgs/croatia/croatia3.jpeg"),
+      require("./imgs/croatia/dubrovnik.jpeg"),
+      require("./imgs/croatia/dubrovnik1.jpeg"),
+      require("./imgs/croatia/dubrovnik2.jpeg"),
+      require("./imgs/croatia/dubrovnik3.jpeg"),
     ],
   },
   {
@@ -55,10 +55,10 @@ const LOCATIONS = [
       },
     ],
     photos: [
-      require("./imgs/croatia/croatia0.jpeg"),
-      require("./imgs/croatia/croatia1.jpeg"),
-      require("./imgs/croatia/croatia2.jpeg"),
-      require("./imgs/croatia/croatia3.jpeg"),
+      require("./imgs/croatia/split0.jpeg"),
+      require("./imgs/croatia/split1.jpeg"),
+      require("./imgs/croatia/split2.jpeg"),
+      require("./imgs/croatia/split3.jpeg"),
     ],
   },
   {
@@ -67,6 +67,8 @@ const LOCATIONS = [
     city: "Helsinki",
     title: "Helsinki",
     date: "2025-07-28",
+    accomodation: "CheapSleep Hostel Helsinki",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/CheapSleep-Helsinki/Helsinki/59673",
     itinerary: [
       {
         day: 1,
@@ -306,11 +308,17 @@ const LOCATIONS = [
     city: "Australia - Cairnes, Airlie Beach, Byron Bay, Batemans Bay, Sydney, Melbourne",
     title: "Australia",
     date: "2024-08-26",
+    accomodation: ["Wake Up Bondi Beach", "Mad Monkday Cairns", "Wake Up Byron Bay"],
+    accomodationlink: [
+      "https://www.hostelworld.com/pwa/hosteldetails.php/Wake-Up-Bondi-Beach/Sydney/274311",
+      "https://www.hostelworld.com/pwa/hosteldetails.php/Mad-Monkey-Jungle/Cairns/21389",
+      "https://www.hostelworld.com/pwa/hosteldetails.php/Wake-Up-Byron-Bay/Byron-Bay/284218"
+    ],
     itinerary: [
       {
         day: 1,
         activities: [
-          "Stay in bounce hostel. fight off jet lag, trivia night. Gilligan’s day club.",
+          "Stay in Mad Monkey hostel. fight off jet lag, trivia night. Gilligan’s day club.",
         ],
       },
       {
@@ -716,6 +724,8 @@ const LOCATIONS = [
     city: "Budapest",
     title: "Budapest",
     date: "2025-07-15",
+    accomodation: "Avenue Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Avenue-Hostel/Budapest/87612",
     itinerary: [
       {
         day: 1,
@@ -749,6 +759,8 @@ const LOCATIONS = [
     city: "Bratislava",
     title: "Bratislava",
     date: "2025-07-17",
+    accomodation: "Wild Elephants Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Wild-Elephants-Hostel/Bratislava/64370",
     itinerary: [
       {
         day: 1,
@@ -782,6 +794,8 @@ const LOCATIONS = [
     city: "Prague",
     title: "Prague",
     date: "2025-07-21",
+    accomodation: "Prague Dream Hostel",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Prague-Dream-Hostel/Prague/291136",
     itinerary: [
       {
         day: 1,
@@ -1108,6 +1122,8 @@ const LOCATIONS = [
     city: "Venice",
     title: "Venice",
     date: "2025-10-27",
+    accomodation: "MEININGER Venezia Mestre",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/MEININGER-Venezia-Mestre/Venice/314891",
     itinerary: [
       {
         day: 1,
@@ -1146,6 +1162,8 @@ const LOCATIONS = [
     city: "Rome",
     title: "Rome",
     date: "2025-10-30",
+    accomodation: "The Beehive",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Beehive/Rome/82786",
     itinerary: [
       {
         day: 1,
@@ -1338,6 +1356,8 @@ const LOCATIONS = [
     city: "Vienna",
     title: "Vienna (Christmas Season)",
     date: "2025-12-14",
+    accomodation: "Hostel Wien - Myrthengasse",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Hostel-Wien-Myrthengasse-HI-/Vienna/53031",
     itinerary: [
       {
         day: 1,
@@ -1401,8 +1421,152 @@ const LOCATIONS = [
       require("./imgs/bosnia/mostar2.jpeg"),
       require("./imgs/bosnia/mostar3.jpeg"),
     ],
+  },
+  {
+    id: 'dublin-ireland',
+    country: 'Ireland',
+    city: 'Dublin',
+    title: 'Dublin, Ireland',
+    accomodation: "Clink i Lár",
+    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Clink-i-L-r/Dublin/319519",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Tour the Guinness Storehouse — finish with a pint at Gravity Bar overlooking the city",
+          "Walk through St. Patrick’s Cathedral or nearby gardens",
+          "Explore Grafton Street & St. Stephen’s Green",
+          "Evening in Temple Bar — live music, pubs, and Irish nightlife"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Full-day trip to the Cliffs of Moher (3-hour drive each way)",
+          "Walk the coastal cliff paths for panoramic Atlantic views",
+          "Visit the Burren region or Doolin village (depending on your tour)",
+          "Return to Dublin in the evening"
+        ]
+      },
+      {
+        day: 3,
+        activities: [
+          "Visit Trinity College — see the Book of Kells & Long Room Library",
+          "Explore Dublin Castle & the Chester Beatty Museum",
+          "Walk along the River Liffey to the Ha’penny Bridge",
+          "Browse shops around Henry Street or Powerscourt Townhouse",
+          "Relax with a pint in a cosy pub like The Stag’s Head or The Brazen Head"
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/ireland/dublin0.jpeg"),
+      require("./imgs/ireland/dublin1.jpeg"),
+      require("./imgs/ireland/dublin2.jpeg"),
+      require("./imgs/ireland/dublin3.jpeg"),
+    ]
+  },
+  {
+    id: "ghent-belgium",
+    country: "Belgium",
+    city: "Ghent",
+    title: "Ghent, Belgium",
+    accommodation: ["NH Gent Belfort"],
+    accommodationLink: "https://www.nh-hotels.com/hotel/nh-gent-belfort",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore Patershol medieval district",
+          "Visit Gravensteen Castle",
+          "Walk along Graslei & Korenlei canals",
+          "Lunch: De Graslei (Flemish stew + local beer)",
+          "Visit Saint Bavo’s Cathedral (see the Ghent Altarpiece)",
+          "Stroll through Vrijdagmarkt Square",
+          "Optional: Climb the Ghent Belfry",
+          "Dinner at Oak Restaurant or Du Progrès",
+          "Evening canal walk or beer at Dulle Griet"
+        ]
+      }
+  ],
+  photos: [
+    require("./imgs/belgium/ghent0.jpeg"),
+    require("./imgs/belgium/ghent1.jpeg"),
+  ]
+  },
+  {
+    id: "bruges-belgium",
+    country: "Belgium",
+    city: "Bruges",
+    title: "Bruges, Belgium",
+    accommodation: ["Hotel Duke's Palace"],
+    accommodationLink: "https://www.hoteldukespalace.com/",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Start at Market Square (Markt)",
+          "Climb the Belfry of Bruges",
+          "Walk toward Burg Square",
+          "Lunch: Brasserie Cambrinus",
+          "Visit the Basilica of the Holy Blood",
+          "Walk the canal route toward the Beguinage",
+          "Visit Minnewater Lake (Lake of Love)",
+          "Chocolate tasting at The Chocolate Line",
+          "Waffles at Chez Albert",
+          "Dinner at Den Gouden Harynck or De Vlaamsche Pot",
+          "Evening canal boat ride"
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/belgium/bruges0.jpeg"),
+      require("./imgs/belgium/bruges1.jpeg"),
+    ],
+  },
+  {
+    id: "brussels-belgium",
+    country: "Belgium",
+    city: "Brussels",
+    title: "Brussels, Belgium",
+    accommodation: ["The Hotel Brussels"],
+    accommodationLink: "https://www.thehotel.be/",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Start at Grand Place",
+          "Visit Manneken Pis",
+          "Walk through Galeries Royales Saint-Hubert",
+          "Lunch at Noordzee / Mer du Nord",
+          "Explore Royal Palace & Brussels Park",
+          "Visit the Magritte Museum",
+          "Fries at Friterie Tabora or waffle at Maison Dandoy",
+          "Dinner at Nüetnigenough or Chez Léon",
+          "Drinks at Delirium Café"
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit the Atomium (go inside for city views)",
+          "Walk through Mini-Europe",
+          "Lunch in the EU Quarter (Le Pain Quotidien)",
+          "Tour the European Parliament Experience",
+          "Walk through Parc du Cinquantenaire",
+          "Optional museum: Autoworld or Art & History Museum",
+          "Shopping on Avenue Louise",
+          "Coffee at Café Belga",
+          "Dinner at Comme Chez Soi or La Roue d'Or",
+          "Evening drinks in Place Sainte-Catherine"
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/belgium/brussels0.jpeg"),
+      require("./imgs/belgium/brussels1.jpeg"),
+    ]
   }
-  
 ];
 
 export default LOCATIONS;
