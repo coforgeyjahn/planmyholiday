@@ -67,8 +67,8 @@ const LOCATIONS = [
     city: "Helsinki",
     title: "Helsinki",
     date: "2025-07-28",
-    accomodation: "CheapSleep Hostel Helsinki",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/CheapSleep-Helsinki/Helsinki/59673",
+    accommodation: "CheapSleep Hostel Helsinki",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/CheapSleep-Helsinki/Helsinki/59673",
     itinerary: [
       {
         day: 1,
@@ -132,8 +132,8 @@ const LOCATIONS = [
     city: "Tirana",
     title: "Tirana",
     date: "2025-10-13",
-    accomodation: "The Bearded Dad Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Bearded-Dad-Hostel/Tirana/313345",
+    accommodation: "The Bearded Dad Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Bearded-Dad-Hostel/Tirana/313345",
     itinerary: [
       {
         day: 1,
@@ -165,8 +165,8 @@ const LOCATIONS = [
     city: "Shkoder",
     title: "Shkoder",
     date: "2025-10-15",
-    accomodation: "Galley Party Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Galley-Party-Hostel-Social-Solo-Travellers-Day-Tours/Shkoder/315294",
+    accommodation: "Galley Party Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Galley-Party-Hostel-Social-Solo-Travellers-Day-Tours/Shkoder/315294",
     itinerary: [
       {
         day: 1,
@@ -195,15 +195,15 @@ const LOCATIONS = [
     city: "Alps",
     title: "Theth & Valbone",
     date: "2025-10-17",
-    accomodation: "CNTR Park Hotel",
-    accomodationlink: "https://www.booking.com/hotel/al/cnt-park-valbona.en-gb.html",
+    accommodation: "CNTR Park Hotel",
+    accommodationlink: "https://www.booking.com/hotel/al/cnt-park-valbona.en-gb.html",
     itinerary: [
       {
         day: 1,
         activities: [
           "Get bus to Theth Village in the Albanian Alps",
           "Leave on 7 hour/20k hike to Valbona",
-          "Check into accomodation, we stayed in a hut at Centre Park",
+          "Check into accommodation, we stayed in a hut at Centre Park",
         ],
       },
       {
@@ -227,8 +227,8 @@ const LOCATIONS = [
     city: "Hanoi",
     title: "Hanoi",
     date: "2023-04-23",
-    accomodation: "Global Backpackers Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Global-Backpackers-Hostel/Hanoi/319717",
+    accommodation: "Global Backpackers Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Global-Backpackers-Hostel/Hanoi/319717",
     itinerary: [
      {
         day: 1,
@@ -263,8 +263,8 @@ const LOCATIONS = [
     city: "Ha Giang Loop",
     title: "Ha Giang",
     date: "2023-04-25",
-    accomodation: "Jasmine tours",
-    accomodationlink: "https://jasminehagiang.com/",
+    accommodation: "Jasmine tours",
+    accommodationlink: "https://jasminehagiang.com/",
     itinerary: [
       {
         day: 1,
@@ -308,8 +308,8 @@ const LOCATIONS = [
     city: "Australia - Cairnes, Airlie Beach, Byron Bay, Batemans Bay, Sydney, Melbourne",
     title: "Australia",
     date: "2024-08-26",
-    accomodation: ["Wake Up Bondi Beach", "Mad Monkday Cairns", "Wake Up Byron Bay"],
-    accomodationlink: [
+    accommodation: ["Wake Up Bondi Beach", "Mad Monkday Cairns", "Wake Up Byron Bay"],
+    accommodationlink: [
       "https://www.hostelworld.com/pwa/hosteldetails.php/Wake-Up-Bondi-Beach/Sydney/274311",
       "https://www.hostelworld.com/pwa/hosteldetails.php/Mad-Monkey-Jungle/Cairns/21389",
       "https://www.hostelworld.com/pwa/hosteldetails.php/Wake-Up-Byron-Bay/Byron-Bay/284218"
@@ -435,8 +435,8 @@ const LOCATIONS = [
     city: "Iceland",
     title: "Iceland",
     date: "2024-03-28",
-    accomodation: "KEX Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/KEX-Hostel-and-Hotel/Reykjavik/48573",
+    accommodation: "KEX Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/KEX-Hostel-and-Hotel/Reykjavik/48573",
     itinerary: [
       {
         day: 1,
@@ -476,8 +476,8 @@ const LOCATIONS = [
     city: "Copenhagen",
     title: "Denmark",
     date: "2024-04-21",
-    accomodation: "Next House Copenhagen",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Next-House-Copenhagen/Copenhagen/310761",
+    accommodation: "Next House Copenhagen",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Next-House-Copenhagen/Copenhagen/310761",
     itinerary: [
       {
         day: 1,
@@ -724,8 +724,8 @@ const LOCATIONS = [
     city: "Budapest",
     title: "Budapest",
     date: "2025-07-15",
-    accomodation: "Avenue Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Avenue-Hostel/Budapest/87612",
+    accommodation: "Avenue Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Avenue-Hostel/Budapest/87612",
     itinerary: [
       {
         day: 1,
@@ -759,8 +759,8 @@ const LOCATIONS = [
     city: "Bratislava",
     title: "Bratislava",
     date: "2025-07-17",
-    accomodation: "Wild Elephants Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Wild-Elephants-Hostel/Bratislava/64370",
+    accommodation: "Wild Elephants Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Wild-Elephants-Hostel/Bratislava/64370",
     itinerary: [
       {
         day: 1,
@@ -794,8 +794,8 @@ const LOCATIONS = [
     city: "Prague",
     title: "Prague",
     date: "2025-07-21",
-    accomodation: "Prague Dream Hostel",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Prague-Dream-Hostel/Prague/291136",
+    accommodation: "Prague Dream Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Prague-Dream-Hostel/Prague/291136",
     itinerary: [
       {
         day: 1,
@@ -1122,8 +1122,8 @@ const LOCATIONS = [
     city: "Venice",
     title: "Venice",
     date: "2025-10-27",
-    accomodation: "MEININGER Venezia Mestre",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/MEININGER-Venezia-Mestre/Venice/314891",
+    accommodation: "MEININGER Venezia Mestre",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/MEININGER-Venezia-Mestre/Venice/314891",
     itinerary: [
       {
         day: 1,
@@ -1162,8 +1162,8 @@ const LOCATIONS = [
     city: "Rome",
     title: "Rome",
     date: "2025-10-30",
-    accomodation: "The Beehive",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Beehive/Rome/82786",
+    accommodation: "The Beehive",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Beehive/Rome/82786",
     itinerary: [
       {
         day: 1,
@@ -1356,8 +1356,8 @@ const LOCATIONS = [
     city: "Vienna",
     title: "Vienna (Christmas Season)",
     date: "2025-12-14",
-    accomodation: "Hostel Wien - Myrthengasse",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Hostel-Wien-Myrthengasse-HI-/Vienna/53031",
+    accommodation: "Hostel Wien - Myrthengasse",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Hostel-Wien-Myrthengasse-HI-/Vienna/53031",
     itinerary: [
       {
         day: 1,
@@ -1428,8 +1428,8 @@ const LOCATIONS = [
     city: 'Dublin',
     title: 'Dublin, Ireland',
     date: "2025-03-28",
-    accomodation: "Clink i Lár",
-    accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Clink-i-L-r/Dublin/319519",
+    accommodation: "Clink i Lár",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Clink-i-L-r/Dublin/319519",
     itinerary: [
       {
         day: 1,
@@ -1474,7 +1474,7 @@ const LOCATIONS = [
     title: "Ghent, Belgium",
     date: "2025-05-05",
     accommodation: ["NH Gent Belfort"],
-    accommodationLink: "https://www.nh-hotels.com/hotel/nh-gent-belfort",
+    accommodationlink: "https://www.nh-hotels.com/hotel/nh-gent-belfort",
     itinerary: [
       {
         day: 1,
@@ -1503,7 +1503,7 @@ const LOCATIONS = [
     title: "Bruges, Belgium",
     date: "2025-05-06",
     accommodation: ["Hotel Duke's Palace"],
-    accommodationLink: "https://www.hoteldukespalace.com/",
+    accommodationlink: "https://www.hoteldukespalace.com/",
     itinerary: [
       {
         day: 1,
@@ -1534,7 +1534,7 @@ const LOCATIONS = [
     title: "Brussels, Belgium",
     date: "2025-05-08",
     accommodation: ["The Hotel Brussels"],
-    accommodationLink: "https://www.thehotel.be/",
+    accommodationlink: "https://www.thehotel.be/",
     itinerary: [
       {
         day: 1,
@@ -1630,9 +1630,9 @@ const LOCATIONS = [
     city: "Amsterdam",
     title: "Amsterdam",
     date: "2025-06-22",
-    accommodation: "St Christopher's Inn Amsterdam - The Winston",
-    accommodationLink: "https://www.hostelworld.com/pwa/hosteldetails.php/St-Christopher-s-Inn-Amsterdam-The-Winston/Amsterdam/13607",
     country: "Netherlands",
+    accommodation: "St Christopher's Inn Amsterdam - The Winston",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/St-Christopher-s-Inn-Amsterdam-The-Winston/Amsterdam/13607",
     itinerary: [
       {
         day: 1,

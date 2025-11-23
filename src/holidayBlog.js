@@ -25,21 +25,21 @@ function LocationCard({ location }) {
       </div>
       <div>
         <h4>Itinerary</h4>
-        {location.accomodation && (
+        {location.accommodation && (
           <div>
             <h5>Book with:</h5>
             <ul>
-              {Array.isArray(location.accomodation) ? (
-                location.accomodation.map((acc, i) => (
+              {Array.isArray(location.accommodation) ? (
+                location.accommodation.map((acc, i) => (
                   <li key={i}>
-                    <a href={location.accomodationlink?.[i] || location.accomodationlink}>
+                    <a href={location.accommodationlink?.[i] || location.accommodationlink}>
                       {acc}
                     </a>
                   </li>
                 ))
               ) : (
                 <li>
-                  <a href={location.accomodationlink}>{location.accomodation}</a>
+                  <a href={location.accommodationlink}>{location.accommodation}</a>
                 </li>
               )}
             </ul>
