@@ -1427,6 +1427,7 @@ const LOCATIONS = [
     country: 'Ireland',
     city: 'Dublin',
     title: 'Dublin, Ireland',
+    date: "2025-03-28",
     accomodation: "Clink i Lár",
     accomodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Clink-i-L-r/Dublin/319519",
     itinerary: [
@@ -1471,6 +1472,7 @@ const LOCATIONS = [
     country: "Belgium",
     city: "Ghent",
     title: "Ghent, Belgium",
+    date: "2025-05-05",
     accommodation: ["NH Gent Belfort"],
     accommodationLink: "https://www.nh-hotels.com/hotel/nh-gent-belfort",
     itinerary: [
@@ -1499,6 +1501,7 @@ const LOCATIONS = [
     country: "Belgium",
     city: "Bruges",
     title: "Bruges, Belgium",
+    date: "2025-05-06",
     accommodation: ["Hotel Duke's Palace"],
     accommodationLink: "https://www.hoteldukespalace.com/",
     itinerary: [
@@ -1529,6 +1532,7 @@ const LOCATIONS = [
     country: "Belgium",
     city: "Brussels",
     title: "Brussels, Belgium",
+    date: "2025-05-08",
     accommodation: ["The Hotel Brussels"],
     accommodationLink: "https://www.thehotel.be/",
     itinerary: [
@@ -1572,6 +1576,7 @@ const LOCATIONS = [
     country: "Belgium",
     city: "Dinant",
     title: "Dinant, Belgium",
+    date: "2025-05-04",
     itinerary: [
       {
         day: 1,
@@ -1589,7 +1594,78 @@ const LOCATIONS = [
       require("./imgs/belgium/dinant2.jpeg"),
       require("./imgs/belgium/dinant3.jpeg"),
     ]
+  },
+  {
+    id: "luxembourg",
+    city: "Luxembourg City",
+    title: "Luxembourg",
+    date: "2025-06-05",
+    country: "Luxembourg",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Old Town — wander through Place Guillaume II & Place d'Armes",
+          "Walk to the Grand Ducal Palace (changing of the guard if timed right)",
+          "Explore Casemates du Bock — underground tunnels carved into cliffs",
+          "Lunch in the Grund — charming riverside district",
+          "Luxembourg City History Museum",
+          "Walk through the beautiful Kirchberg district",
+          "Explore Parc de Ville for a relaxing nature break",
+          "Afternoon hike: Pfaffenthal → Kirchberg Skywalk trail loop",
+          "Take the panoramic lift from Upper Town → Grund",
+          "Dinner in Grund — recommended: Scott’s Pub or Bosso Brasserie"
+        ]
+      },
+    ],
+    photos: [
+      require("./imgs/luxembourg/lux0.jpeg"),
+      require("./imgs/luxembourg/lux1.jpeg"),
+      require("./imgs/luxembourg/lux2.jpeg"),
+      require("./imgs/luxembourg/lux3.jpeg"),
+    ]
+  },
+  {
+    id: "amsterdam-netherlands",
+    city: "Amsterdam",
+    title: "Amsterdam",
+    date: "2025-06-22",
+    country: "Netherlands",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Jordaan district — cozy streets, indie shops, cafés",
+          "Visit the Anne Frank House (must book weeks in advance — timed entry only)",
+          "Lunch at Café Winkel 43 (famous apple pie)",
+          "Explore the Nine Streets (De 9 Straatjes) — boutique shopping & canals",
+          "Take a 1-hour canal cruise (best at sunset, book with wine and cheese!)",
+          "Dinner and drinks at A'DAM Lookout swing for panoramic views over the city",          
+        ]
+      },
+      {
+        day: 2,
+        activities: [
+          "Start at Museumplein — visit the Van Gogh Museum (allow 1-2 hours)",
+          "Walk through Vondelpark — Amsterdam’s most famous park",
+          "Visit the Royal Palace & Dam Square",
+          "Explore the floating flower market (Bloemenmarkt)",
+          "Lunch at Foodhallen — indoor food market with great options",
+          "Visit the Heineken Experience (fun, interactive brewery tour - 1-2 hours)",
+          "Explore De Pijp neighborhood — hip cafés & trendy streets",
+          "Evening option: canal-side dinner or a relaxed cocktail bar in De Pijp"
+        ]
+      },
+    ],
+    photos: [
+      require("./imgs/netherlands/amsterdam0.jpeg"),
+      require("./imgs/netherlands/amsterdam5.jpeg"),
+      require("./imgs/netherlands/amsterdam1.jpeg"),
+      require("./imgs/netherlands/amsterdam3.jpeg"),
+      require("./imgs/netherlands/amsterdam4.jpeg")
+    ]
   }
+  
 ];
 
 export default LOCATIONS;
