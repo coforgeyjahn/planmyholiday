@@ -1566,6 +1566,29 @@ const LOCATIONS = [
       require("./imgs/belgium/brussels0.jpeg"),
       require("./imgs/belgium/brussels1.jpeg"),
     ]
+  },
+  {
+    id: "dinant-belgium",
+    country: "Belgium",
+    city: "Dinant",
+    title: "Dinant, Belgium",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Take the cable car (or climb!) for amazing Meuse River views",
+          "Walk along the Charles de Gaulle Bridge, see the famous for colorful saxophones",
+          "Relaxing riverside walk - or rent a Kayak!",
+          "Visit the Collegiate Church of Notre Dame de Dinant",
+        ]
+      }
+    ],
+    photos: [
+      require("./imgs/belgium/dinant0.jpeg"),
+      require("./imgs/belgium/dinant1.jpeg"),
+      require("./imgs/belgium/dinant2.jpeg"),
+      require("./imgs/belgium/dinant3.jpeg"),
+    ]
   }
 ];
 
