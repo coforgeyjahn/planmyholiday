@@ -1630,6 +1630,8 @@ const LOCATIONS = [
     city: "Amsterdam",
     title: "Amsterdam",
     date: "2025-06-22",
+    accommodation: "St Christopher's Inn Amsterdam - The Winston",
+    accommodationLink: "https://www.hostelworld.com/pwa/hosteldetails.php/St-Christopher-s-Inn-Amsterdam-The-Winston/Amsterdam/13607",
     country: "Netherlands",
     itinerary: [
       {
