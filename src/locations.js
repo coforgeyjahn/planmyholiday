@@ -1355,7 +1355,7 @@ const LOCATIONS = [
     country: "Austria",
     city: "Vienna",
     title: "Vienna (Christmas Season)",
-    date: "2025-12-14",
+    date: "2025-12-14", 
     accommodation: "Hostel Wien - Myrthengasse",
     accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Hostel-Wien-Myrthengasse-HI-/Vienna/53031",
     itinerary: [
@@ -1666,7 +1666,360 @@ const LOCATIONS = [
       require("./imgs/netherlands/amsterdam3.jpeg"),
       require("./imgs/netherlands/amsterdam4.jpeg")
     ]
+  },
+  {
+    id: 'tunisia',
+    city: 'Tunis',
+    country: 'Tunisia',
+    date: '2025-10-08',
+    title: 'Tunis, Tunisia',
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore the Medina of Tunis (UNESCO World Heritage Site) — maze-like souks, mosques, and historic palaces",
+          "Visit Zitouna Mosque, the spiritual heart of the medina",
+          "Lunch at a traditional medina restaurant (try couscous or ojja)",
+          "Visit the Bardo Museum — world-famous Roman mosaics and Tunisian history",
+          "Evening stroll and dinner in La Marsa or Sidi Bou Said area"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Day trip to Carthage (UNESCO World Heritage Site)",
+          "Explore the ancient ruins: Antonine Baths, Punic Ports, and Roman villas",
+          "Visit Carthage National Museum for historical context",
+          "Stop in Sidi Bou Said — white-and-blue coastal village with sea views",
+          "Coffee or mint tea at Café des Délices overlooking the Mediterranean"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Day trip south to Matmata — famous underground Berber houses built to escape desert heat",
+          "Guided visit inside a traditional troglodyte home",
+          "Learn about Berber culture and desert life",
+          "Optional stop at Star Wars filming locations nearby",
+          "Return to Tunis in the evening for a relaxed dinner"
+        ],
+      },
+    ],
+    photos: [
+      require('./imgs/tunisia/tunisia1.jpeg'),
+      require('./imgs/tunisia/tunisia6.jpeg'),
+      require('./imgs/tunisia/tunisia3.jpeg'),
+      require('./imgs/tunisia/tunisia4.jpeg'),
+      require('./imgs/tunisia/tunisia5.jpeg'),
+    ]
+  },
+  {
+    id: 'turkey',
+    city: 'Istanbul',
+    country: 'Turkey',
+    date: '2024-05-01',
+    title: 'Istanbul, Turkey',
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore Sultanahmet Square — heart of historic Istanbul",
+          "Visit Hagia Sophia (book early or arrive early to avoid queues)",
+          "Blue Mosque — iconic domes and intricate tilework",
+          "Basilica Cistern — atmospheric underground columns and Medusa heads",
+          "Evening walk through Sultanahmet with dinner nearby"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit Topkapi Palace — Ottoman sultans’ former residence",
+          "Lunch overlooking the Bosphorus",
+          "Shop at the Grand Bazaar — spices, carpets, jewelry, souvenirs",
+          "Traditional Turkish dinner with meze and rakı"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Morning in Galata — climb Galata Tower for panoramic city views",
+          "Wander Istiklal Street — cafés, shops, street music",
+          "Evening boat ride with drinks on the Bosphorus Strait along"
+        ],
+      },
+      {
+        day: 4,
+        activities: [
+          "Relaxed morning with Turkish breakfast (kahvaltı)",
+          "Explore Balat & Fener neighborhoods — colorful streets and historic churches",
+          "Visit Spice Bazaar for sweets, teas, and spices",
+          "Nightlife — clubbing, dancing (We went to Zorlu and danced all night)",
+        ],
+      },
+    ],
+    photos: [
+      require('./imgs/turkey/turkey1.jpeg'),
+      require('./imgs/turkey/turkey3.jpeg'),
+      require('./imgs/turkey/turkey4.jpeg'),
+      require('./imgs/turkey/turkey5.jpeg'),
+      require('./imgs/turkey/turkey7.jpeg'),
+    ]
+  },
+  {
+    id: "bangkok-thailand",
+    country: "Thailand",
+    city: "Bangkok",
+    title: "Bangkok, Thailand",
+    date: "2023-07-01",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Arrive in Bangkok and check into hostel",
+          "Explore Khao San Road — backpacker hub, street food, bars",
+          "Visit nearby temples or chill with a Thai massage",
+          "Night out on Khao San Road"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Visit the Grand Palace and Wat Phra Kaew",
+          "Wat Pho — Reclining Buddha",
+          "Cross river to Wat Arun for views",
+          "Evening street food crawl or rooftop drinks"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Floating or railway market day trip ",
+          "Explore Chinatown (Yaowarat) — incredible food scene",
+          "Overnight flight to Chiang Mai"
+        ],
+      },
+    ],
+    photos: [
+      require('./imgs/thailand/bangkok1.jpeg'),
+      require('./imgs/thailand/bangkok2.jpeg'),
+      require('./imgs/thailand/bangkok3.jpeg'),
+
+    ],
+  },
+  {
+    id: 'chiang-mai-thailand',
+    title: 'Chiang Mai, Thailand',
+    country: "Thailand",
+    city: "Bangkok",
+    date: "2023-07-04",
+    itinerary: [{
+      day: 1,
+      activities: [
+          "Explore Chiang Mai Old City temples",
+          "Visit Wat Phra Singh or Wat Chedi Luang",
+          "Evening at Chiang Mai Night Bazaar or Sunday Market"
+        ],
+  }],
+    photos: [
+      require('./imgs/thailand/chiang-mai.jpeg'),
+    ]
+  },
+  {
+    id: 'pai-thailand',
+    title: 'Pai, Thailand',
+    country: "Thailand",
+    city: "Pai",
+    date: "2023-07-05",
+    itinerary: [{
+      day: 1,
+      activities: [
+        "Check into hostel and relax",
+        "Explore Pai walking street",
+        "Sunset at Pai Canyon"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Scooter around Pai countryside",
+        "Visit Pai Hot Springs",
+        "Explore waterfalls (Mo Paeng or Pam Bok)",
+        "Evening drinks and live music in Pai town"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Visit an elephant sanctuary, go on a walk with elephants and bathe in the river with them",
+        "Tipsy Tubing (white water rafting with glow paint and drinks)",
+        "Night out at Boom Room"
+      ],
+  }],
+  photos: [
+    require('./imgs/thailand/pai1.jpeg'),
+    require('./imgs/thailand/pai2.jpeg'),
+    require('./imgs/thailand/pai3.jpeg'),
+    require('./imgs/thailand/pai4.jpeg'),
+  ]
+},
+{
+  id: 'krabi-thailand',
+  title: 'Krabi, Thailand',
+  country: "Thailand",
+  city: "Krabi",
+  date: "2023-07-09",
+  itinerary: [{
+    day: 1,
+    activities: [
+      "Travel back to Chiang Mai",
+      "Fly south to Krabi",
+      "Check into hostel and relax",
+      "Sunset at Ao Nang beach"
+    ],
+  },
+  {
+    day: 2,
+    activities: [
+      "Rock climbing in Railay Beach (world-famous limestone cliffs)",
+      "Beach time and swimming",
+      "Explore caves and viewpoints in Railay",
+      "Evening drinks in Ao Nang or Railay"
+    ],
+  }],
+  photos: [
+    require('./imgs/thailand/krabi1.jpeg'),
+    require('./imgs/thailand/krabi2.jpeg'),
+    require('./imgs/thailand/krabi3.jpeg'),
+    require('./imgs/thailand/krabi4.jpeg'),
+  ]
+},
+{
+  id: 'koh-phi-phi-thailand',
+  title: 'Koh Phi Phi & Phuket, Thailand',
+  country: "Thailand",
+  city: "Koh Phi Phi",
+  date: "2023-07-11",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Boat transfer to Koh Phi Phi",
+        "Check into hostel and explore the island",
+        "Swim and relax on the beach",
+        "Night out at Phi Phi beach bars and fire shows"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Phi Phi island hopping tour",
+        "Maya Bay, Pileh Lagoon, snorkeling stops",
+        "Sunset viewpoint hike on Phi Phi",
+        "Another lively night out"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Sleep in and beach recovery day",
+        "Kayaking or snorkeling",
+        "Final night partying on the island"
+      ],
+    },
+    {
+      day: 4,
+      activities: [
+        "Ferry to Phuket & check into hostel",
+        "Check into hostel",
+        "Explore Phuket Old Town",
+        "Sunset at Karon or Kata Beach"
+      ],
+    },
+    {
+      day: 5,
+      activities: [
+        "Beach day or island hopping from Phuket",
+        "Relax, swim, and shop",
+        "Night out in Patong or relaxed dinner",
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/thailand/kohphiphi1.jpeg'),
+    require('./imgs/thailand/kohphiphi2.jpeg'),
+    require('./imgs/thailand/kohphiphi3.jpeg'),
+    require('./imgs/thailand/kohphiphi4.jpeg'),
+  ]
+},
+{
+  id: "bulgaria",
+  city: "Borovets",
+  country: "Bulgaria",
+  title: "Boroverts, Bulgaria - SKI Holiday",
+  date: "2025-02-09",
+  itinerary: [{
+    activities: ["Ski/Snowboard/Sled/Snowsports!"]
+  }],
+  photos: [
+    require('./imgs/bulgaria/borovets1.jpeg'),
+    require('./imgs/bulgaria/borovets2.jpeg'),
+    require('./imgs/bulgaria/borovets3.jpeg'),
+  ]
+},
+{
+  id: "singapore",
+  city: "Singapore",
+  country: "Singapore",
+  title: "Singapore",
+  date: "2023-05-03",
+  itinerary: [{
+    activities:[
+
+    ]
   }
+  ],
+  photos: [
+    require('./imgs/singapore/singapore1.jpeg'),
+    require('./imgs/singapore/singapore2.jpeg'),
+    require('./imgs/singapore/singapore3.jpeg'),
+    require('./imgs/singapore/singapore4.jpeg'),
+  ]
+},
+{
+  id: "stockholm-sweden",
+  country: "Sweden",
+  city: "Stockholm",
+  title: "Stockholm",
+  date: "2025-03-10",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Walk around Gamla Stan (Old Town) — cobblestone streets, medieval alleys, and colorful buildings",
+        "Walk along the waterfront toward Skeppsholmen for winter views",
+        "Evening sauna experience (traditional Nordic sauna - cold plunge optional if brave)",
+        "Dinner and drinks in Södermalm - cozy bars and laid-back nightlife"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Visit the Vasa Museum — preserved 17th-century warship (& Vikings history!)",
+        "Explore Djurgården Island — quiet winter walks and museum hopping",
+        "Optional stop at ABBA The Museum or Skansen open-air museum",
+        "Sunset viewpoint at Monteliusvägen (early sunset in March)",
+        "Final dinner along the waterfront or in Norrmalm"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/sweden/stockholm1.jpeg'),
+    require('./imgs/sweden/stockholm2.jpeg'),
+    require('./imgs/sweden/stockholm3.jpeg'),
+    require('./imgs/sweden/stockholm4.jpeg'),
+  ],
+}
+
   
 ];
 
