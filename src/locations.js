@@ -2331,7 +2331,116 @@ const LOCATIONS = [
     require('./imgs/norway/oslo2.jpeg'),
     require('./imgs/norway/oslo4.jpeg')
   ],
+},
+{
+  id: "lisbon-portugal",
+  country: "Portugal",
+  city: "Lisbon",
+  title: "Lisbon",
+  date: "2025-05-01",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Explore Alfama — wander narrow streets and viewpoints",
+        "Visit Lisbon Cathedral (Sé)",
+        "Miradouro de Santa Luzia & Portas do Sol",
+        "Lunch at a traditional Alfama restaurant",
+        "Short ride on Tram 28",
+        "Sunset at Miradouro da Senhora do Monte",
+        "Dinner and wine in Alfama or Graça"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Visit Jerónimos Monastery in Belém",
+        "Explore Belém Tower",
+        "Walk to Padrão dos Descobrimentos",
+        "Stop at Pastéis de Belém for pastries",
+        "Walk along the Tagus River",
+        "Afternoon rest or café stop",
+        "Evening in Bairro Alto",
+        "Optional nightlife in Cais do Sodré (Pink Street)"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Morning visit to LX Factory (coffee, shops, street art)",
+        "Explore Baixa district",
+        "Walk Rua Augusta",
+        "Visit Praça do Comércio",
+        "Ride the Elevador de Santa Justa",
+        "Lunch near the river",
+        "Sunset drinks or optional Fado dinner"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/portugal/lisbon1.jpeg'),
+    require('./imgs/portugal/lisbon2.jpeg'),
+    require('./imgs/portugal/lisbon4.jpeg'),
+  ]
+},
+{
+  id: "faro-portugal",
+  country: "Portugal",
+  city: "Faro",
+  title: "Faro",
+  date: "2025-05-04",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Arrive in Faro",
+        "Explore Faro Old Town (Cidade Velha)",
+        "Walk through Arco da Vila",
+        "Visit Faro Cathedral",
+        "Lunch in the old town",
+        "Boat trip through Ria Formosa Lagoon",
+        "Relax by the marina",
+        "Sunset walk along Faro waterfront",
+        "Seafood dinner"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/portugal/faro0.jpeg'),
+    require('./imgs/portugal/faro1.jpeg'),
+    require('./imgs/portugal/faro3.jpeg'),
+  ]
+},
+{
+  id: "cascais-portugal",
+  country: "Portugal",
+  city: "Cascais",
+  title: "Cascais",
+  date: "2025-05-05",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Train from Lisbon to Cascais (scenic coastal route)",
+        "Explore Cascais Old Town",
+        "Relax at Praia da Ribeira",
+        "Walk along the coastal promenade",
+        "Visit Boca do Inferno cliffs",
+        "Lunch by the sea",
+        "Beach time or coastal walk",
+        "Sunset by the water",
+        "Evening train back to Lisbon"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/portugal/cascais0.jpeg'),
+    require('./imgs/portugal/cascais1.jpeg'),
+    require('./imgs/portugal/cascais2.jpeg'),
+    require('./imgs/portugal/cascais3.jpeg'),
+  ]
 }
+
 ];
 
 export default LOCATIONS;
