@@ -1972,10 +1972,20 @@ const LOCATIONS = [
   country: "Singapore",
   title: "Singapore",
   date: "2023-05-03",
-  itinerary: [{
-    activities:[
-
-    ]
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Early morning walk through Gardens by the Bay — see the Supertrees in daylight",
+        "Optional visit to the Cloud Forest or Flower Dome",
+        "Walk along Marina Bay Sands promenade",
+        "Merlion Park photo stop",
+        "Lunch at a hawker centre (Lau Pa Sat or Maxwell Food Centre)",
+        "Explore Chinatown — temples, street markets, and cafés",
+        "Afternoon visit to Little India — Sri Veeramakaliamman Temple & colorful streets",
+        "Sunset at Marina Bay Sands SkyPark (book ahead)",
+        "Night stroll through Clarke Quay or rooftop drinks at a city bar"
+      ]
   }
   ],
   photos: [
@@ -1998,7 +2008,7 @@ const LOCATIONS = [
         "Walk around Gamla Stan (Old Town) — cobblestone streets, medieval alleys, and colorful buildings",
         "Walk along the waterfront toward Skeppsholmen for winter views",
         "Evening sauna experience (traditional Nordic sauna - cold plunge optional if brave)",
-        "Dinner and drinks in Södermalm - cozy bars and laid-back nightlife"
+        "Dinner and drinks in Södermalm - cozy bars and laid-back nightlife",
       ],
     },
     {
@@ -2008,7 +2018,7 @@ const LOCATIONS = [
         "Explore Djurgården Island — quiet winter walks and museum hopping",
         "Optional stop at ABBA The Museum or Skansen open-air museum",
         "Sunset viewpoint at Monteliusvägen (early sunset in March)",
-        "Final dinner along the waterfront or in Norrmalm"
+        "Final dinner along the waterfront or in Norrmalm",
       ],
     },
   ],
@@ -2018,9 +2028,310 @@ const LOCATIONS = [
     require('./imgs/sweden/stockholm3.jpeg'),
     require('./imgs/sweden/stockholm4.jpeg'),
   ],
+},
+{
+  id: "ljubjana-slovenia",
+  city: "Ljubljana",
+  country: "Slovenia",
+  title: "Ljubljana Slovenia",
+  date: "2025-12-29",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Coffee & panini at slaščičarna",
+        "Climb up to castle (or use funicular if you’d rather rest your legs!)",
+        "Explore the park (lots of pretty trails)",
+        "Descend into old town and walk through centre market and cathedral of saint nicolas",
+        "See if there’s anything going on in paviljon (main square where events and concerts are held)",
+        "Dinner from a stall try local cuisine",
+        "Meletkova to see graffiti and street art everywhere",
+      ]
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning stroll or coffee along the Ljubljanica River — cafés near Cobbler’s Bridge",
+        "Visit Metelkova Art Center — alternative culture hub with street art and galleries",
+        "Tivoli Park walk — green space, gardens, and city viewpoints",
+        "Lunch near the park or back in the old town",
+        "Optional visit to the National Gallery or Museum of Modern Art",
+        "Late afternoon river cruise (short and scenic)",
+        "Dinner by the river",
+      ]
+    },
+  ],
+  photos: [
+    require('./imgs/slovenia/slov.jpeg'),
+    require('./imgs/slovenia/slov1.jpeg'),
+    require('./imgs/slovenia/slov2.jpeg'),
+    require('./imgs/slovenia/slov3.jpeg'),
+  ]
+},
+{
+  id: "bled-slovenia",
+  city: "Bled",
+  country: "Slovenia",
+  title: "Bled Slovenia",
+  date: "2025-12-31",
+  itinerary: [
+    {
+      day: 1,
+      activities:
+      [
+        "Arrive early to Lake Bled for quiet morning views",
+        "Walk the full lake loop (~6 km) — flat, scenic, and incredibly peaceful",
+        "Climb up to Bled Castle for panoramic views over the lake and island",
+        "Lunch in Bled town (try traditional Slovenian dishes)",
+        "Traditional pletna boat ride to Bled Island",
+        "Climb the 99 steps to the Church of the Assumption and ring the wishing bell",
+        "Afternoon coffee or swim by the lake if warm",
+        "Try Bled cream cake (kremšnita) before leaving",
+        "Sunset stroll along the lake"
+      ]
+    }
+  ],
+  photos: [
+    require('./imgs/slovenia/bled1.jpeg'),
+    require('./imgs/slovenia/bled2.jpeg'),
+    require('./imgs/slovenia/bled3.jpeg'),
+  ]
+},
+{
+  id: "athens-greece",
+  country: "Greece",
+  city: "Athens",
+  title: "Athens",
+  date: "2025-05-01",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Walk through Plaka — charming old streets beneath the Acropolis",
+        "Acropolis & Parthenon — go early or late to avoid crowds",
+        "Visit the Acropolis Museum",
+        "Sunset views from Areopagus Hill",
+        "Dinner in Monastiraki with views of the Acropolis lit up"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Ancient Agora & Temple of Hephaestus",
+        "Stroll through Psiri — street art and cafés",
+        "Lunch at a traditional taverna",
+        "National Archaeological Museum (optional but incredible)",
+        "Evening drinks in Kolonaki or rooftop bar like A for Athens"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Day trip to Cape Sounion & Temple of Poseidon",
+        "Coastal drive along the Athenian Riviera",
+        "Beach stop if weather allows",
+        "Sunset at the Temple of Poseidon",
+        "Late dinner back in Athens"
+      ],
+    },
+    {
+      day: 4,
+      activities: [
+        "Morning walk through the National Gardens",
+        "Changing of the Guard at Syntagma Square",
+        "Last-minute shopping or café hopping",
+        "Head to port (Piraeus) for island ferry"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/greece/athens0.jpeg'),
+    require('./imgs/greece/athens1.jpeg'),
+    require('./imgs/greece/athens3.jpeg'),
+    require('./imgs/greece/athens4.jpeg')
+  ],
+},
+{
+  id: "paros-greece",
+  country: "Greece",
+  city: "Paros",
+  title: "Paros",
+  date: "2025-05-05",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Arrive in Parikia — explore port town & old streets",
+        "Visit Panagia Ekatontapiliani (historic church)",
+        "Beach time at Livadia Beach",
+        "Sunset drinks by the harbor",
+        "Casual dinner in Parikia"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Day trip to Naoussa — whitewashed streets & boutique shops",
+        "Swim at Kolymbithres Beach (rock formations)",
+        "Late lunch in Naoussa harbor",
+        "Relaxed afternoon beach hopping",
+        "Nightlife in Naoussa — lively bars & clubs"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Rent a scooter or ATV to explore inland villages",
+        "Stop at Lefkes village — traditional mountain town",
+        "Beach stop at Golden Beach or Santa Maria",
+        "Ferry prep for next island"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/greece/paros0.jpeg'),
+    require('./imgs/greece/paros1.jpeg'),
+    require('./imgs/greece/paros2.jpeg'),
+    require('./imgs/greece/paros3.jpeg')
+  ],
+},
+{
+  id: "naxos-greece",
+  country: "Greece",
+  city: "Naxos",
+  title: "Naxos",
+  date: "2025-05-08",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Explore Naxos Town (Chora)",
+        "Walk up to the Portara — iconic marble gate",
+        "Lunch in the old town",
+        "Beach time at Agia Anna or Agia Prokopios",
+        "Sunset at Portara"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Rent a car or scooter to explore inland villages",
+        "Visit Halki village & local distillery",
+        "Stop at Filoti village at Mount Zas",
+        "Lunch at a traditional mountain taverna",
+        "Beach stop at Plaka Beach"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Optional hike on Mount Zas (highest point in Cyclades)",
+        "Relaxed morning beach time",
+        "Final shopping & café hopping in Chora",
+        "Evening ferry to Hydra (via Athens)"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/greece/naxos0.jpeg'),
+    require('./imgs/greece/naxos1.jpeg'),
+    require('./imgs/greece/naxos2.jpeg'),
+    require('./imgs/greece/naxos3.jpeg')
+  ],
+},
+{
+  id: "hydra-greece",
+  country: "Greece",
+  city: "Hydra",
+  title: "Hydra",
+  date: "2025-05-12",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Arrive by ferry — soak in the car-free island vibes",
+        "Explore Hydra Harbor & stone alleys",
+        "Swim off rocks near Spilia or Hydronetta",
+        "Sunset drinks overlooking the port",
+        "Dinner by the water"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Hike from Hydra Town to Mandraki Beach",
+        "Beach day — swimming & sunbathing",
+        "Lunch at a seaside taverna",
+        "Afternoon café stop back in town",
+        "Low-key evening drinks"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Morning coastal walk or boat taxi to a quiet swim spot",
+        "Last swim & harbor stroll",
+        "Souvenir shopping",
+        "Afternoon ferry back to Athens"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/greece/hydra0.jpeg'),
+    require('./imgs/greece/hydra1.jpeg'),
+    require('./imgs/greece/hydra2.jpeg'),
+    require('./imgs/greece/hydra3.jpeg')
+  ],
+},
+{
+  id: "oslo-norway",
+  country: "Norway",
+  city: "Oslo",
+  title: "Oslo",
+  date: "2025-04-05",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Explore Oslo City Center — Karl Johans gate & surrounding streets",
+        "Visit the Royal Palace & palace park",
+        "Walk along Aker Brygge waterfront",
+        "Visit the Nobel Peace Center (optional)",
+        "Dinner by the harbor",
+        "Evening drinks in Grünerløkka — trendy bars and relaxed nightlife"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Visit the Vigeland Sculpture Park (Frogner Park)",
+        "Explore the Viking Ship Museum or the new National Museum",
+        "Lunch in Tjuvholmen",
+        "Sauna experience at Oslo Fjord Sauna or KOK (fjord views)",
+        "Optional cold plunge in the fjord",
+        "Sunset along the waterfront",
+        "Casual dinner and wine bar"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Take the metro to Holmenkollen",
+        "Visit the Holmenkollen Ski Jump & Ski Museum",
+        "Short hike or viewpoint walk overlooking the Oslo Fjord",
+        "Return to the city for lunch",
+        "Souvenir shopping or café hopping",
+        "Final evening in Grünerløkka or rooftop drinks"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/norway/oslo0.jpeg'),
+    require('./imgs/norway/oslo1.jpeg'),
+    require('./imgs/norway/oslo2.jpeg'),
+    require('./imgs/norway/oslo4.jpeg')
+  ],
 }
-
-  
 ];
 
 export default LOCATIONS;
