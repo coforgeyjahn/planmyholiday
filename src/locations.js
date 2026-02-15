@@ -613,6 +613,64 @@ const LOCATIONS = [
     ],
   },
   {
+    id: "val-thorens-france",
+    country: "France",
+    city: "Val Thorens",
+    title: "Val Thorens Ski Trip",
+    accommodation: "Silveralpes",
+    accommodationlink: "https://www.booking.com/hotel/fr/le-silveralp-val-thorens.en-gb.html",
+    date: "2025-02-10",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Check-in and settle into chalet/apartment",
+          "Après ski at La Folie Douce (terrace dancing & DJs)",
+          "Fondue or raclette dinner at La Maison Val Thorens",
+          "Late drinks at Malaysia nightclub",
+          "Walk back through snowy village at night"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Relaxed afternoon recovery after skiing",
+          "Après at 360 Bar with panoramic mountain views",
+          "Casual dinner (pizza or comfort food)",
+          "Night out at Le Monde for live music & dancing",
+          "Village bar hopping"
+        ],
+      },
+      {
+        day: 3,
+        activities: [
+          "Spa / hot tub or sauna recovery session",
+          "Chill terrace drinks at La Pause",
+          "Easy dinner night",
+          "Return to favorite après bar",
+          "Early night or casual drinks"
+        ],
+      },
+      {
+        day: 4,
+        activities: [
+          "Scenic sunset drinks overlooking the slopes",
+          "Final celebratory dinner",
+          "Last-night après victory lap",
+          "Souvenir shopping in the village",
+          "Pack & relax evening"
+        ],
+      },
+    ],
+    photos: [
+      require('./imgs/france/valt0.jpeg'),
+      require('./imgs/france/valt1.jpeg'),
+      require('./imgs/france/valt2.jpeg'),
+      require('./imgs/france/valt3.jpeg'),
+      require('./imgs/france/valt4.jpeg'),
+    ]
+  },  
+  {
     id: "chamonix-france",
     country: "France",
     city: "Chamonix",
@@ -2033,7 +2091,7 @@ const LOCATIONS = [
   id: "ljubjana-slovenia",
   city: "Ljubljana",
   country: "Slovenia",
-  title: "Ljubljana Slovenia",
+  title: "Ljubljana",
   date: "2025-12-29",
   itinerary: [
     {
@@ -2072,7 +2130,7 @@ const LOCATIONS = [
   id: "bled-slovenia",
   city: "Bled",
   country: "Slovenia",
-  title: "Bled Slovenia",
+  title: "Bled",
   date: "2025-12-31",
   itinerary: [
     {
@@ -2439,8 +2497,567 @@ const LOCATIONS = [
     require('./imgs/portugal/cascais2.jpeg'),
     require('./imgs/portugal/cascais3.jpeg'),
   ]
+},
+{
+  id: "berlin-germany",
+  country: "Germany",
+  city: "Berlin",
+  title: "Berlin",
+  date: "2025-06-01",
+  accommodation: "Meininger Hostel - East Side Gallery",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/MEININGER-Berlin-East-Side-Gallery/Berlin/280374?",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Visit the Brandenburg Gate",
+        "Walk through the Reichstag area",
+        "Memorial to the Murdered Jews of Europe",
+        "Explore Tiergarten park",
+        "Lunch in Mitte",
+        "Berlin Wall East Side Gallery",
+        "Sunset along the Spree River",
+        "Evening drinks in Kreuzberg"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Museum Island (Pergamon or Neues Museum)",
+        "Berlin Cathedral",
+        "Alexanderplatz & TV Tower area",
+        "Hackescher Markt cafés and shops",
+        "Street food lunch",
+        "Tempelhofer Feld park walk",
+        "Dinner in Neukölln",
+        "Berlin club or underground nightlife experience (Sisophys recommended)"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Checkpoint Charlie",
+        "Topography of Terror museum",
+        "Walk along remaining Berlin Wall sections",
+        "Shopping on Kurfürstendamm",
+        "Sunset and drinks at Klunkerkranich",
+        "Final dinner and cocktail bar"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/germany/berlin/berlin0.jpeg'),
+    require('./imgs/germany/berlin/berlin1.jpeg'),
+    require('./imgs/germany/berlin/berlin2.jpeg'),
+    require('./imgs/germany/berlin/berlin3.jpeg'),
+  ]
+},
+{
+  id: "munich-germany",
+  country: "Germany",
+  city: "Munich",
+  title: "Munich",
+  date: "2025-06-04",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Marienplatz and Glockenspiel",
+        "Walk through Munich Old Town",
+        "Visit Frauenkirche cathedral",
+        "Viktualienmarkt food market lunch",
+        "English Garden stroll",
+        "Watch surfers at Eisbach wave",
+        "Dinner at a traditional beer hall",
+        "Evening beer garden"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Day trip to Neuschwanstein Castle",
+        "Explore Füssen town",
+        "Alpine lake views and hiking",
+        "Return to Munich",
+        "Casual Bavarian dinner",
+        "Late evening drinks"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Visit Nymphenburg Palace",
+        "BMW Museum or Olympic Park",
+        "Lunch near Olympic Park",
+        "Shopping in city center",
+        "Café stop",
+        "Sunset walk",
+        "Final Bavarian dinner"
+      ],
+    },
+  ],
+  photos: [
+      require('./imgs/germany/munich/munich1.jpeg'),
+      require('./imgs/germany/munich/munich2.jpeg'),
+      require('./imgs/germany/munich/munich3.jpeg'),
+  ]
+},
+{
+  id: "frankfurt-germany",
+  country: "Germany",
+  city: "Frankfurt",
+  title: "Frankfurt",
+  date: "2025-06-07",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Explore Römerberg old town square",
+        "Frankfurt Cathedral",
+        "Walk along the Main River",
+        "Lunch in Sachsenhausen",
+        "Visit Städel Museum",
+        "Main Tower observation deck",
+        "Dinner with skyline views",
+        "Cocktail bar evening"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Palmengarten botanical gardens",
+        "Shopping on Zeil street",
+        "Café hopping (Eat and afternoon wine Amelie's Wohnzimmer)",
+        "Museum Embankment walk",
+        "River cruise option",
+        "Relaxed dinner",
+        "Night walk through illuminated skyline"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/germany/frankfurt/frankfurt0.jpeg'),
+    require('./imgs/germany/frankfurt/frankfurt1.jpeg'),
+    require('./imgs/germany/frankfurt/frankfurt2.jpeg'),
+  ]
+},
+{
+  id: "rothenburg-germany",
+  country: "Germany",
+  city: "Rothenburg ob der Tauber",
+  title: "Rothenburg",
+  date: "2025-06-11",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Walk the medieval town walls (full loop around the city)",
+        "Explore Marktplatz and the Town Hall tower viewpoint",
+        "St. Jakob’s Church visit",
+        "Wander cobblestone streets and half-timbered houses",
+        "Visit the Medieval Crime Museum",
+        "Try a Schneeball pastry",
+        "Sunset at Castle Garden overlooking the valley",
+        "Dinner in a traditional tavern"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning walk through Plönlein (iconic postcard street)",
+        "Christmas Museum & Käthe Wohlfahrt shop",
+        "Local café breakfast",
+        "Small boutique shopping",
+        "Optional countryside walk outside the walls",
+        "Lunch in old town square",
+        "Photography walk through quiet side streets",
+        "Final evening stroll along the walls"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/germany/rothenburg/rothenburg0.jpeg'),
+    require('./imgs/germany/rothenburg/rothenburg1.jpeg'),
+    require('./imgs/germany/rothenburg/rothenburg2.jpeg'),
+    require('./imgs/germany/rothenburg/rothenburg3.jpeg'),
+    require('./imgs/germany/rothenburg/rothenburg4.jpeg')
+  ]
+},
+{
+  id: "geneva-switzerland",
+  country: "Switzerland",
+  city: "Geneva",
+  title: "Geneva",
+  date: "2025-06-20",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Walk along Lake Geneva promenade",
+        "See the Jet d’Eau fountain",
+        "Explore Old Town & St. Pierre Cathedral tower climb",
+        "Lunch in the old town square",
+        "Visit Parc des Bastions & Reformation Wall",
+        "Chocolate tasting stop",
+        "Sunset by the lake",
+        "Dinner with lake views"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Boat cruise on Lake Geneva",
+        "Visit the United Nations & international district",
+        "Café hopping in Carouge (bohemian neighborhood)",
+        "Local market browsing",
+        "Relax in lakeside park",
+        "Wine bar evening",
+        "Casual dinner stroll"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/switzerland/geneva0.jpeg'),
+    require('./imgs/switzerland/geneva1.jpeg'),
+  ]
+},
+{
+  id: "interlaken-switzerland",
+  country: "Switzerland",
+  city: "Interlaken",
+  title: "Interlaken",
+  date: "2025-06-23",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Morning walk through Höhematte park",
+        "Cable car up Harder Kulm viewpoint",
+        "Lunch overlooking Lake Thun",
+        "Explore Interlaken town shops",
+        "Lake Thun sunset cruise",
+        "Swiss dinner in town"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Day trip to Lauterbrunnen Valley",
+        "Visit Staubbach Falls",
+        "Train ride through alpine villages",
+        "Optional hike or scenic walk",
+        "Return to Interlaken",
+        "Relaxed evening drinks"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Lake Brienz morning walk",
+        "Kayaking or paddleboarding (seasonal)",
+        "Souvenir shopping",
+        "Café brunch",
+        "Final scenic viewpoints",
+        "Chill evening before departure"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/switzerland/interlaken0.jpeg'),
+    require('./imgs/switzerland/interlaken1.jpeg'),
+    require('./imgs/switzerland/interlaken2.jpeg'),
+  ]
+},
+{
+  id: "marrakesh-morocco",
+  country: "Morocco",
+  city: "Marrakesh",
+  title: "Marrakesh",
+  date: "2025-06-28",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Explore Jemaa el-Fnaa square for street food, performers, markets",
+        "Visit Bahia Palace",
+        "Walk through the souks (shopping maze)",
+        "Lunch in a rooftop café overlooking the medina",
+        "Visit Koutoubia Mosque exterior & gardens",
+        "Relax at a traditional hammam spa",
+        "Dinner in the old city",
+        "Night market atmosphere in Jemaa el-Fnaa"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Day trip to the Atlas Mountains",
+        "Visit Berber villages",
+        "Mountain valley hike or scenic walk",
+        "Traditional lunch in a local home or mountain café",
+        "Waterfall viewpoint stop",
+        "Return to Marrakesh in the evening",
+        "Relaxed dinner back in the city"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Morning visit to Jardin Majorelle & YSL Museum",
+        "Traditional Tajin cooking class - one of the most incredible experiences!",
+        "Evening trip to Tameslouht desert",
+        "Camel ride at sunset",
+        "ATV quad biking in the desert",
+        "Traditional dinner and desert camp experience"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/morocco/marrakech0.jpeg'),
+    require('./imgs/morocco/marrakech7.jpeg'),
+    require('./imgs/morocco/marrakech3.jpeg'),
+    require('./imgs/morocco/marrakech5.jpeg'),
+    require('./imgs/morocco/marrakech9.jpeg'),
+  ]
+},
+{
+  "id": "calgary-canada",
+  "country": "Canada",
+  "city": "Calgary",
+  "title": "Calgary",
+  "date": "2025-07-02",
+  "itinerary": [
+    {
+      "day": 1,
+      "activities": [
+        "Walk through downtown Calgary — Stephen Avenue pedestrian street",
+        "Visit Calgary Tower observation deck for skyline + Rocky Mountain views",
+        "Explore the Bow River pathway and Peace Bridge walk",
+        "Lunch in Kensington neighborhood (cafés & boutique streets)",
+        "Visit Studio Bell National Music Centre or Glenbow Museum (optional)",
+        "Prince’s Island Park stroll and river views",
+        "Dinner in East Village or Inglewood district",
+        "Evening drinks with rooftop or riverfront views"
+      ]
+    }
+  ],
+  photos: [
+    require('./imgs/canada/calgary0.jpeg'),
+    require('./imgs/canada/calgary1.jpeg'),
+    require('./imgs/canada/calgary2.jpeg'),
+    require('./imgs/canada/calgary3.jpeg'),
+  ]
+},
+{
+  "id": "budva-montenegro",
+  "country": "Montenegro",
+  "city": "Budva",
+  "title": "Budva",
+  "date": "2025-07-15",
+  "itinerary": [
+    {
+      "day": 1,
+      "activities": [
+        "Explore Budva Old Town (Stari Grad) — medieval walls & stone streets",
+        "Visit Citadel viewpoint overlooking the Adriatic",
+        "Coffee break in a hidden old town café",
+        "Relax at Mogren Beach (short coastal walk from town)",
+        "Sunset walk along Budva promenade",
+        "Seafood dinner inside Old Town",
+        "Evening cocktails by the marina"
+      ]
+    },
+    {
+      "day": 2,
+      "activities": [
+        "Morning swim at Slovenska Beach",
+        "Boat trip along the Budva Riviera (optional island stop)",
+        "Visit Sveti Stefan viewpoint (iconic photo stop)",
+        "Lunch at a seaside restaurant",
+        "Afternoon relaxation or spa time",
+        "Dinner with sunset sea views",
+        "Late-night beach bar or casual nightlife"
+      ]
+    },
+    {
+      "day": 3,
+      "activities": [
+        "Short hike or coastal walk above Budva cliffs",
+        "Brunch overlooking the water",
+        "Souvenir shopping in Old Town boutiques",
+        "Final beach afternoon — choose your favorite spot",
+        "Gelato or café stop before sunset",
+        "Last evening stroll through Stari Grad",
+        "Farewell dinner by candlelight"
+      ]
+    }
+  ],
+  photos: [
+    require('./imgs/montenegro/budva0.jpeg'),
+    require('./imgs/montenegro/budva2.jpeg'),
+    require('./imgs/montenegro/budva3.jpeg'),
+    require('./imgs/montenegro/budva4.jpeg'),
+  ]
+},
+{
+  id: "canggu-bali",
+  country: "Indonesia",
+  city: "Canggu",
+  title: "Canggu",
+  date: "2025-07-20",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Sunrise coffee & smoothie bowls at a Canggu café",
+        "Surf lesson or beach hang at Batu Bolong Beach",
+        "Explore rice fields by scooter",
+        "Lunch at a trendy health café (Mama Coco)",
+        "Relax at a beach club pool",
+        "Sunset dinner, drinks, & swim at The Lawn"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Yoga or wellness morning class",
+        "Shopping local boutiques & markets",
+        "Beach hopping along the coast",
+        "Late afternoon massage or spa",
+        "Play some afternoon Padel",
+        "Dinner at a modern Bali restaurant",
+        "Beer and Live music at Black Sand brewery"
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "3am wakeup shuttle to Mount Batur for sunrise views of the volcano",
+        "Relax in hot springs and have breakfast",
+        "Back to Canggu midday, nap on the beach",
+        "Afternoon shopping in the main Canggu markets",
+        "Dinner at Seaweed Resto and drinks across the street at Old Man's",
+        "Finns night club for late night swimming and dancing"
+      ]
+    }
+  ],
+  photos: [
+    require('./imgs/indonesia/canggu0.jpeg'),
+    require('./imgs/indonesia/canggu1.jpeg'),
+    require('./imgs/indonesia/canggu2.jpeg'),
+    require('./imgs/indonesia/canggu3.jpeg')
+  ]
+},
+{
+  id: "uluwatu-bali",
+  country: "Indonesia",
+  city: "Uluwatu",
+  title: "Uluwatu",
+  date: "2025-07-22",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Morning cliffside café breakfast",
+        "Beach time at Padang Padang or Bingin Beach",
+        "Relax at a beach club pool",
+        "Visit Uluwatu Temple",
+        "Watch Kecak fire dance at sunset",
+        "Seafood dinner overlooking cliffs",
+        "Chill drinks under the stars"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Surf watching or beginner lesson",
+        "Hidden beach exploring",
+        "Spa afternoon",
+        "Sunset viewpoint hopping",
+        "Dinner with ocean views",
+        "Dance the night away at Savaya"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/indonesia/ulu0.jpeg'),
+    require('./imgs/indonesia/ulu1.jpeg'),
+    require('./imgs/indonesia/ulu2.jpeg'),
+  ]
+},
+{
+  id: "ubud-bali",
+  country: "Indonesia",
+  city: "Ubud",
+  title: "Ubud",
+  date: "2025-07-24",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Visit a jungle waterfall",
+        "Lunch overlooking the valley",
+        "Explore Ubud town markets",
+        "Monkey Forest visit",
+        "Traditional Balinese dinner",
+        "Walk through Tegallalang rice terraces",
+        "Swim and drinks at Cretya"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Sunrise yoga class",
+        "Temple visit & water purification ritual",
+        "Coffee plantation tasting",
+        "Spa afternoon",
+        "Sunset jungle walk",
+        "Relaxed dinner in town"
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/indonesia/ubuud0.jpeg'),
+    require('./imgs/indonesia/ubuud1.jpeg'),
+    require('./imgs/indonesia/ubuud2.jpeg'),
+    require('./imgs/indonesia/ubuud3.jpeg'),
+  ]
+},
+{
+  id: "gili-trawangan",
+  country: "Indonesia",
+  city: "Gili Trawangan",
+  title: "Gili Trawangan",
+  date: "2025-07-26",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Bike ride around the island (no cars!)",
+        "Snorkeling with turtles",
+        "Beachside lunch",
+        "Hammock relaxation afternoon",
+        "Sunset swing photos",
+        "Dinner on the sand",
+        "Island nightlife & beach bars - full moon party if timing aligns!"
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning swim in crystal water",
+        "Boat snorkeling tour",
+        "Massage by the beach",
+        "Café hopping",
+        "Sunset drinks",
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/indonesia/gili0.jpeg'),
+    require('./imgs/indonesia/gili1.jpeg'),
+  ]
 }
-
 ];
 
 export default LOCATIONS;
