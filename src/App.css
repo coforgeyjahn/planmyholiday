@@ -10,7 +10,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(135deg, #FFF3E0, #FFE0B2, #FFD54F);
+  background: linear-gradient(to right, #3b82f6, #2dd4bf);
   width: 100%;
   height: 100vh;
 }
@@ -23,11 +23,28 @@
   margin: 0%;
 }
 
+/* top-left header */
 .App-header-toprow {
-  display: flex;
-  justify-content: flex-start; /* left */
-  align-items: flex-start; 
+  position: absolute;
+  top: 12px;
+  left: 12px;
 }
+
+.App-header-toprow .App-button {
+  font-size: 0.8rem;
+  padding: 6px 10px;
+}
+
+/* center the main content */
+.App-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+}
+
 
 .App-text {
   padding: 0%;
