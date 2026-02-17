@@ -1,6 +1,6 @@
 import { Routes, Route, useNavigate } from "react-router-dom";
 import earth from "./earth-big.gif";
-import './App.css';
+import './styles/App.css';
 import SetOptions from "./SetOptions.js";
 import Results from "./Results.js"
 import HolidayBlog from "./holidayBlog.js";

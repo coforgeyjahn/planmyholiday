@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useCallback } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import { createApi } from "unsplash-js";
-import "./Results.css";
+import "./styles/Results.css";
 import { UNSPLASH_ACCESS_KEY } from "./keys";
 
 const unsplash = createApi({
@@ -42,20 +42,42 @@ function Results() {
     }
   }, [response, preferences, navigate]);
 
-  // --- Destinations parsing ---
-  const destinations = useMemo(() => {
-    if (!response) return [];
-
-    const normalizedText = response.replace(/\r\n/g, "\n");
-    const matches = Array.from(
-      normalizedText.matchAll(/(\d+)\.\s(.+?)\n([\s\S]*?)(?=\n\d+\.|$)/g)
-    );
-
-    return matches.map((match, index) => ({
-      title: match[2]?.trim() || `Untitled Destination ${index + 1}`,
-      description: match[3]?.trim() || "No description available.",
-    }));
+  // --- Parse PASSPORT_NAME & destinations ---
+  const { passportName, destinations } = useMemo(() => {
+    if (!response) return { passportName: "", destinations: [] };
+  
+    const lines = response.split("\n");
+    let passportName = "";
+    const dests = [];
+    let currentDest = null;
+  
+    lines.forEach((line) => {
+      const trimmed = line.trim();
+  
+      if (trimmed.startsWith("PASSPORT_NAME:")) {
+        passportName = trimmed.replace("PASSPORT_NAME:", "").trim();
+      } else if (/^\d+\./.test(trimmed)) {
+        // New destination
+        if (currentDest) dests.push(currentDest);
+        const title = trimmed.replace(/^\d+\.\s*/, "").trim();
+        currentDest = { title, flightSummary: "", description: "" };
+      } else if (/^DESTINATION_\d+_FLIGHT_SUMMARY:/.test(trimmed)) {
+        // Store flight summary but DO NOT append to description
+        currentDest.flightSummary = trimmed.replace(/^DESTINATION_\d+_FLIGHT_SUMMARY:/, "").trim();
+      } else if (/^DESTINATION_\d+_/.test(trimmed)) {
+        // Skip any other DESTINATION_X_ placeholders
+        return;
+      } else if (currentDest) {
+        // Append everything else to description
+        currentDest.description += trimmed + "\n";
+      }
+    });
+  
+    if (currentDest) dests.push(currentDest);
+  
+    return { passportName, destinations: dests };
   }, [response]);
+  
 
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(true);
@@ -86,11 +108,8 @@ function Results() {
     setLoading(false);
   }, [destinations]);
 
-  // --- Trigger image fetching ---
   useEffect(() => {
-    if (destinations.length > 0) {
-      fetchImages();
-    }
+    if (destinations.length > 0) fetchImages();
   }, [destinations, fetchImages]);
 
   const handleClick = () => {
@@ -110,9 +129,13 @@ function Results() {
       <button className="back-button" onClick={handleClick}>
         Go back and edit preferences
       </button>
-      <h1 style={{ color: "#2c3e50", fontSize: "2.5em", marginBottom: "10px" }}>
-        Your Perfect Holiday
-      </h1>
+
+      {passportName && (
+        <h1 style={{ color: "#2c3e50", fontSize: "2.5em", marginBottom: "10px" }}>
+          Passport Name: {passportName}
+        </h1>
+      )}
+
       {preferences.length > 0 ? (
         <p>
           Based on your travel preferences of{" "}
@@ -124,6 +147,7 @@ function Results() {
       ) : (
         <p>No preferences provided.</p>
       )}
+
       {destinations.map((destination, index) => (
         <div
           key={index}
@@ -135,9 +159,9 @@ function Results() {
             boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
           }}
         >
-          <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
-            {index + 1}. {destination.title}
-          </h2>
+        <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
+          {index + 1}. {destination.title.replace(/\*\*(.+?)\*\*/g, "$1")}
+        </h2>
           <img
             src={images[destination.title] || "https://via.placeholder.com/400"}
             alt={destination.title}
@@ -148,9 +172,11 @@ function Results() {
               objectFit: "cover",
             }}
           />
+
           <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>
-            <ReactMarkdown>{destination.description}</ReactMarkdown>
+            <ReactMarkdown>{`**Flight Details:**${destination.description}`}</ReactMarkdown>
           </div>
+
           <div>
             <p>Check out this awesome hostel site:</p>
             <a href="https://www.hostelworld.com/" target="_blank" rel="noopener noreferrer">
