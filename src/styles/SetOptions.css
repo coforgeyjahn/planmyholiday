@@ -162,12 +162,53 @@ html, body, #root {
 /* Mobile-Specific Adjustments */
 @media (max-width: 768px) {
   .trip-details-section {
-    padding: 30px;
+    margin-top: 60px;
+    padding: 24px;
     gap: 12px;
+    width: 94%;
+  }
+
+  .trip-details-section h2 {
+    font-size: 1.4rem;
+    text-align: center;
   }
 
   .trip-details-section input {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .bubble {
+    width: 64px;
+    height: 64px;
+    font-size: 0.8rem;
+  }
+
+  .bubbles-container {
+    width: 95%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.6rem;
+  }
+
+  .set-options-confirm {
+    width: 140px;
+    height: 60px;
+    border-radius: 30px;
     font-size: 0.9rem;
+    margin-top: 40px;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-label {
+    width: 100%;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 6px;
+    font-size: 16px;
   }
 }
 
