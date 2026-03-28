@@ -49,15 +49,14 @@ const SetOptions = () => {
           header: true,
           skipEmptyLines: true
         });
-  
+
         const cleaned = parsed.data.filter(a =>
           a.Type === "airport" && a.IATA
         );
-  
+
         setAirports(cleaned);
       });
   }, []);
-  
 
   useEffect(() => {
     if (selectedPreferences.length === 3 && formRef.current) {
@@ -93,24 +92,16 @@ const SetOptions = () => {
       return;
     }
 
-    console.log("Airports: ", airports)
-
     const matches = airports
-    .filter(a => {
-      const city = a.City?.toLowerCase() || "";
-      const name = a.Name?.toLowerCase() || "";
-      const iata = a.IATA?.toLowerCase() || "";
-  
-      const search = value.toLowerCase();
-  
-      return (
-        city.includes(search) ||
-        name.includes(search) ||
-        iata.includes(search)
-      );
-    })
-    .slice(0, 10);
-  
+      .filter(a => {
+        const city = a.City?.toLowerCase() || "";
+        const name = a.Name?.toLowerCase() || "";
+        const iata = a.IATA?.toLowerCase() || "";
+        const search = value.toLowerCase();
+        return city.includes(search) || name.includes(search) || iata.includes(search);
+      })
+      .slice(0, 10);
+
     setFilteredAirports(matches);
   };
 
@@ -118,35 +109,40 @@ const SetOptions = () => {
 
   const buildPrompt = () => {
     return `
-    Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, and ${selectedPreferences[2]}?
-    Please try to find flights within the ${tripDetails.budget} from the listed ${tripDetails.departure} destination.
-      
-    Please format your response exactly like this, using markdown headings and bold titles:
-    
-    PASSPORT_NAME:
-    A funny, light-hearted travel persona name based on the three preferences traits
+Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, and ${selectedPreferences[2]}?
+Please try to find flights within the £${tripDetails.budget} budget from ${tripDetails.departure}.
 
-    1. DESTINATION_1_CITY:
+Please format your response exactly like this:
 
-    Exactly one line of text explaining the average return flight price and travel time from the departure location.
+PASSPORT_NAME:
+A funny, light-hearted travel persona name based on the three preference traits.
 
-    *${selectedPreferences[0]}*: A few sentences explaining why this destination is great for preference 1.
+DESTINATION_1_CONTINENT: The continent (e.g. europe, asia, africa, north-america, south-america, central-america, oceania). Lowercase, hyphenated.
 
-    *${selectedPreferences[1]}*: A few sentences explaining why this destination is great for preference 2.
+DESTINATION_1_COUNTRY: The country in lowercase, hyphenated (e.g. united-kingdom, south-africa, united-states).
 
-    *${selectedPreferences[2]}*: A few sentences on how this destination offers preference 3.
+DESTINATION_1_CITY_SLUG: The city in lowercase, hyphenated (e.g. cape-town, new-york, los-angeles).
 
-    *Why it fits*: A final paragraph tying all three together and explaining why this destination is a well-rounded match.
+Exactly one line of text explaining the average return flight price and travel time from the departure location.
 
-    Repeat this exact format for destinations 2 and 3. Ensure each section is clearly labeled and written in a warm, informative tone. Do not use markdown or bullet points—just structured plain text.      
-    `.trim()
+*${selectedPreferences[0]}*: A few sentences explaining why this destination is great for this preference.
+
+*${selectedPreferences[1]}*: A few sentences explaining why this destination is great for this preference.
+
+*${selectedPreferences[2]}*: A few sentences on how this destination offers this preference.
+
+*Why it fits*: A final paragraph tying all three together.
+
+Repeat this exact format for destinations 2 and 3, using DESTINATION_2_CITY, DESTINATION_2_IATA, etc.
+
+Ensure each section is clearly labeled and written in a warm, informative tone. Do not use markdown or bullet points — just structured plain text.
+    `.trim();
   };
 
   // ---------------- Validation ----------------
 
   const validateForm = () => {
     if (selectedPreferences.length !== 3) return false;
-
     return true;
   };
 
@@ -263,46 +259,42 @@ const SetOptions = () => {
           <div className="form-row">
             <label className="form-label">Budget:</label>
             <div className="form-input">
-              <div className="slider-wrapper">
-                <div className="slider-container">
-                  <input
-                    type="range"
-                    min="100"
-                    max="10000"
-                    step="100"
-                    value={tripDetails.budget || 100} // default to min
-                    onChange={(e) =>
-                      setTripDetails(prev => ({ ...prev, budget: Number(e.target.value) }))
-                    }
-                    className="slider"
-                    style={{
-                      background: `linear-gradient(to right, #007bff 0%, #007bff ${
-                        ((tripDetails.budget - 100) / (10000 - 100)) * 100
-                      }%, #ddd ${((tripDetails.budget - 100) / (10000 - 100)) * 100}%, #ddd 100%)`,
-                    }}
-                  />
-                  <div
-                    className="slider-bubble"
-                    style={{
-                      left: `calc(${((tripDetails.budget - 100) / (10000 - 100)) * 100}% - 10px)`,
-                    }}
-                  >
-                    ${tripDetails.budget}
-                  </div>
-                </div>
+              <div className="budget-row">
+                <input
+                  type="range"
+                  min="100"
+                  max="3000"
+                  step="50"
+                  value={tripDetails.budget || 100}
+                  onChange={(e) =>
+                    setTripDetails(prev => ({ ...prev, budget: Number(e.target.value) }))
+                  }
+                  className="slider"
+                />
+                <span className="budget-value">
+                  £{(tripDetails.budget || 100).toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
         </div>
       )}
 
-      {selectedPreferences.length === 3 && <button
-        className="set-options-confirm"
-        onClick={findTravelDestinations}
-        >
-        Find Destinations
-      </button>
-      }
+      {selectedPreferences.length === 3 && (
+        <button className="find-btn" onClick={findTravelDestinations}>
+          <div className="shimmer" />
+          <div className="plane-wrap">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0 0 11.5 2A1.5 1.5 0 0 0 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="white" />
+            </svg>
+          </div>
+          <div className="btn-text">
+            <span className="btn-label">Find Destinations</span>
+            <span className="btn-sub">explore flights from your city</span>
+          </div>
+          <span className="btn-arrow">→</span>
+        </button>
+      )}
     </div>
   );
 };

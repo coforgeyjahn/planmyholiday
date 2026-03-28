@@ -9,11 +9,31 @@ const unsplash = createApi({
   accessKey: UNSPLASH_ACCESS_KEY,
 });
 
+// ── Deep link builders ──
+function buildLinks(departureFull, destinationIATA, destination) {
+  const iataMatch = departureFull?.match(/\(([A-Z]{3})\)/);
+  const fromIATA = iataMatch ? iataMatch[1] : "";
+  const toIATA = destinationIATA?.toUpperCase() || "";
+
+  const skyscannerUrl =
+    fromIATA && toIATA
+      ? `https://www.skyscanner.net/transport/flights/${fromIATA}/${toIATA}/`
+      : `https://www.skyscanner.net/flights/`;
+
+  const { continent, country, citySlug, city } = destination;
+  const hostelworldUrl =
+    continent && country && citySlug
+      ? `https://www.hostelworld.com/hostels/${continent}/${country}/${citySlug}/`
+      : `https://www.hostelworld.com/search?search=${encodeURIComponent(city)}`;
+
+  return { skyscannerUrl, hostelworldUrl };
+}
+
 function Results() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // --- Extract response & preferences safely ---
+  // ── Extract response & preferences ──
   const response =
     location.state?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
     (() => {
@@ -34,60 +54,81 @@ function Results() {
       }
     })();
 
-  // --- Redirect if no valid data ---
+  const tripDetails =
+    location.state?.tripDetails ||
+    (() => {
+      try {
+        return JSON.parse(localStorage.getItem("tripContext"))?.details;
+      } catch {
+        return {};
+      }
+    })();
+
+  // ── Redirect if no valid data ──
   useEffect(() => {
-    const hasValidData = response && preferences?.length;
-    if (!hasValidData) {
+    if (!response || !preferences?.length) {
       navigate("/", { replace: true });
     }
   }, [response, preferences, navigate]);
 
-  // --- Parse PASSPORT_NAME & destinations ---
+  // ── Parse PASSPORT_NAME, destinations, and IATA codes ──
   const { passportName, destinations } = useMemo(() => {
     if (!response) return { passportName: "", destinations: [] };
-  
+
     const lines = response.split("\n");
     let passportName = "";
     const dests = [];
     let currentDest = null;
-  
+
     lines.forEach((line) => {
       const trimmed = line.trim();
-  
+    
       if (trimmed.startsWith("PASSPORT_NAME:")) {
         passportName = trimmed.replace("PASSPORT_NAME:", "").trim();
-      } else if (/^\d+\./.test(trimmed)) {
-        // New destination
+      } else if (/^DESTINATION_\d+_CONTINENT:/.test(trimmed)) {
+        // New destination starts here
         if (currentDest) dests.push(currentDest);
-        const title = trimmed.replace(/^\d+\.\s*/, "").trim();
-        currentDest = { title, flightSummary: "", description: "" };
-      } else if (/^DESTINATION_\d+_FLIGHT_SUMMARY:/.test(trimmed)) {
-        // Store flight summary but DO NOT append to description
-        currentDest.flightSummary = trimmed.replace(/^DESTINATION_\d+_FLIGHT_SUMMARY:/, "").trim();
+        currentDest = { title: "", iata: "", city: "", continent: "", country: "", citySlug: "", flightSummary: "", description: "" };
+        currentDest.continent = trimmed.replace(/^DESTINATION_\d+_CONTINENT:/, "").trim();
+      } else if (/^DESTINATION_\d+_COUNTRY:/.test(trimmed)) {
+        if (currentDest) currentDest.country = trimmed.replace(/^DESTINATION_\d+_COUNTRY:/, "").trim();
+      } else if (/^DESTINATION_\d+_CITY_SLUG:/.test(trimmed)) {
+        if (currentDest) {
+          currentDest.citySlug = trimmed.replace(/^DESTINATION_\d+_CITY_SLUG:/, "").trim();
+          // Derive a display name from the slug e.g. "cape-town" → "Cape Town"
+          currentDest.city = currentDest.citySlug
+            .split("-")
+            .map(w => w.charAt(0).toUpperCase() + w.slice(1))
+            .join(" ");
+          currentDest.title = currentDest.city;
+        }
+      } else if (/^DESTINATION_\d+_IATA:/.test(trimmed)) {
+        if (currentDest) currentDest.iata = trimmed.replace(/^DESTINATION_\d+_IATA:/, "").trim();
+      } else if (/^DESTINATION_\d+_CITY:/.test(trimmed)) {
+        if (currentDest) {
+          currentDest.city = trimmed.replace(/^DESTINATION_\d+_CITY:/, "").trim();
+          currentDest.title = currentDest.city;
+        }
       } else if (/^DESTINATION_\d+_/.test(trimmed)) {
-        // Skip any other DESTINATION_X_ placeholders
-        return;
+        return; // skip any other unknown DESTINATION_X_ lines
       } else if (currentDest) {
-        // Append everything else to description
         currentDest.description += trimmed + "\n";
       }
     });
-  
+
     if (currentDest) dests.push(currentDest);
-  
+
     return { passportName, destinations: dests };
   }, [response]);
-  
 
   const [images, setImages] = useState({});
   const [loading, setLoading] = useState(true);
 
-  // --- fetchImages wrapped in useCallback ---
   const fetchImages = useCallback(async () => {
     const imagePromises = destinations.map(async (destination) => {
       try {
         const result = await unsplash.search.getPhotos({
-          query: destination.title,
+          query: destination.city || destination.title,
           page: 1,
           perPage: 1,
         });
@@ -112,10 +153,6 @@ function Results() {
     if (destinations.length > 0) fetchImages();
   }, [destinations, fetchImages]);
 
-  const handleClick = () => {
-    navigate("/set-options");
-  };
-
   if (loading) {
     return (
       <div style={{ textAlign: "center", marginTop: "50px" }}>
@@ -126,7 +163,7 @@ function Results() {
 
   return (
     <div className="results-rendering" style={{ padding: "20px", fontFamily: "'Arial', sans-serif" }}>
-      <button className="back-button" onClick={handleClick}>
+      <button className="back-button" onClick={() => navigate("/set-options")}>
         Go back and edit preferences
       </button>
 
@@ -148,43 +185,78 @@ function Results() {
         <p>No preferences provided.</p>
       )}
 
-      {destinations.map((destination, index) => (
-        <div
-          key={index}
-          style={{
-            border: "1px solid #ccc",
-            borderRadius: "10px",
-            padding: "15px",
-            marginBottom: "20px",
-            boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
-          }}
-        >
-        <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
-          {index + 1}. {destination.title.replace(/\*\*(.+?)\*\*/g, "$1")}
-        </h2>
-          <img
-            src={images[destination.title] || "https://via.placeholder.com/400"}
-            alt={destination.title}
+      {destinations.map((destination, index) => {
+        const city = destination.city || destination.title.replace(/\*\*/g, "").split(",")[0].trim();
+        const { skyscannerUrl, hostelworldUrl } = buildLinks(
+          tripDetails?.departure,
+          destination.iata,
+          destination
+        );
+
+        return (
+          <div
+            key={index}
             style={{
-              width: "65%",
-              height: "500px",
+              border: "1px solid #ccc",
               borderRadius: "10px",
-              objectFit: "cover",
+              padding: "15px",
+              marginBottom: "20px",
+              boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
             }}
-          />
+          >
+            <h2 style={{ color: "#34495e", fontSize: "1.8em", marginBottom: "10px" }}>
+              {index + 1}. {destination.city || destination.title.replace(/\*\*(.+?)\*\*/g, "$1")}
+            </h2>
 
-          <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>
-            <ReactMarkdown>{`**Flight Details:** ${destination.description}`}</ReactMarkdown>
-          </div>
+            <img
+              src={images[destination.title] || "https://via.placeholder.com/400"}
+              alt={destination.title}
+              style={{
+                width: "65%",
+                height: "500px",
+                borderRadius: "10px",
+                objectFit: "cover",
+              }}
+            />
 
-          <div>
-            <p>Check out this awesome hostel site:</p>
-            <a href="https://www.hostelworld.com/" target="_blank" rel="noopener noreferrer">
-              Visit Hostelworld
-            </a>
+            <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>
+              <ReactMarkdown>{`**Flight Details:** ${destination.description}`}</ReactMarkdown>
+            </div>
+
+            <div style={{ display: "flex", gap: "12px", marginTop: "12px", justifyContent: "center"}}>
+              <a
+                href={skyscannerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="result-link flight-link"
+                onClick={() =>
+                  window.gtag("event", "click_flights_link", {
+                    destination: destination.city,
+                    from: tripDetails?.departure,
+                    url: skyscannerUrl,
+                  })
+                }
+              >
+                ✈ Browse flights
+              </a>
+              <a
+                href={hostelworldUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="result-link accom-link"
+                onClick={() =>
+                  window.gtag("event", "click_accommodation_link", {
+                    destination: destination.city,
+                    url: hostelworldUrl,
+                  })
+                }
+              >
+                🏨 Browse accommodation
+              </a>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

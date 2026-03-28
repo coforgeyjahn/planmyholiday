@@ -9,13 +9,16 @@ html, body, #root {
 
 /* Bubbles Container */
 .bubbles-container {
-  width: 80%; /* Flexible width */
+  width: 70%; /* Flexible width */
   display: grid;
   grid-template-columns: repeat(4, minmax(80px, 1fr)); /* Adjusts columns based on space */
-  gap: 1rem; /* Dynamic spacing */
+  gap: 1.2rem; /* Dynamic spacing */
   justify-items: center;
   align-items: center;
   margin: 0 auto; /* Center container horizontally */
+  /* width: 70%;
+  grid-template-columns: repeat(4, minmax(90px, 110px));
+  gap: 1.2rem; */
 }
 
 .bubble-hero {
@@ -35,7 +38,6 @@ html, body, #root {
   left: 16px;
 
   padding: 10px 18px;
-  background: white;
 
   border-radius: 9999px;
   font-size: 1.3rem;       /* ⬅︎ enlarge arrow + text */
@@ -44,13 +46,18 @@ html, body, #root {
   cursor: pointer;
   border: none;
 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 .home-bubble:hover {
-  transform: scale(1.12);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.6);
 }
 
 .home-bubble span.arrow {
@@ -101,12 +108,10 @@ html, body, #root {
 
 /* Prompt Text */
 .prompt {
-  padding-bottom: 2rem;
-  font-size: 2.5rem; /* Responsive font size */
-  color: black;
-  font-style: italic;
-  font-family: 'Playfair Display', serif;
-  text-align: center; /* Center text for smaller screens */
+  color: white;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+  padding-top: 1rem;
+  font-size: xx-large;
 }
 
 /* Selected Options */
@@ -375,3 +380,75 @@ html, body, #root {
   pointer-events: none;
 }
 
+
+.form-label {
+  font-size: 20px;
+  font-weight: 800;   /* bolder than before */
+  min-width: 90px;
+  text-align: right;
+}
+
+.budget-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.budget-row .slider {
+  flex: 1;
+}
+
+.budget-value {
+  font-size: 20px;
+  font-weight: 500;
+  min-width: 60px;
+}
+
+.find-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-top: 5rem; /* or more — try 2.5rem or 3rem */
+  gap: 12px;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 12px;
+  cursor: pointer;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.find-btn:hover {
+  background: rgba(255, 255, 255, 0.22);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-1px);
+}
+.find-btn:active { transform: scale(0.98); }
+
+.plane-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  flex-shrink: 0;
+}
+
+.btn-text { display: flex; flex-direction: column; gap: 1px; }
+.btn-label { font-size: 20px; font-weight: 600; color: white; }
+.btn-sub { font-size: 15px; color: rgba(255, 255, 255, 0.6); letter-spacing: 0.03em; }
+
+.btn-arrow { font-size: 16px; color: rgba(255,255,255,0.7); margin-left: 4px; transition: transform 0.2s; }
+.find-btn:hover .btn-arrow { transform: translateX(3px); }
+
+.shimmer {
+  position: absolute;
+  top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  animation: shimmer 2.8s infinite;
+}
+@keyframes shimmer { 0% { left: -60%; } 100% { left: 160%; } }
