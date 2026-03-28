@@ -186,7 +186,6 @@ function Results() {
       )}
 
       {destinations.map((destination, index) => {
-        const city = destination.city || destination.title.replace(/\*\*/g, "").split(",")[0].trim();
         const { skyscannerUrl, hostelworldUrl } = buildLinks(
           tripDetails?.departure,
           destination.iata,
