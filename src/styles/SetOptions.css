@@ -9,16 +9,13 @@ html, body, #root {
 
 /* Bubbles Container */
 .bubbles-container {
-  width: 70%; /* Flexible width */
+  width: 85%;
   display: grid;
-  grid-template-columns: repeat(4, minmax(80px, 1fr)); /* Adjusts columns based on space */
-  gap: 1.2rem; /* Dynamic spacing */
+  grid-template-columns: repeat(4, 1fr); /* always 4 cols = 4x4 grid */
+  gap: 0.8rem;
   justify-items: center;
   align-items: center;
-  margin: 0 auto; /* Center container horizontally */
-  /* width: 70%;
-  grid-template-columns: repeat(4, minmax(90px, 110px));
-  gap: 1.2rem; */
+  margin: 0 auto;
 }
 
 .bubble-hero {
@@ -85,16 +82,15 @@ html, body, #root {
 
 /* Bubble Styles */
 .bubble {
-  width: 8vw; /* Dynamic size based on viewport width */
-  height: 8vw;
-  max-width: 100px; /* Limit size on larger screens */
-  max-height: 100px;
+  width: min(18vw, 100px);
+  height: min(18vw, 100px);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: bold;
+  font-size: clamp(0.55rem, 1.8vw, 0.85rem);
   text-align: center;
   user-select: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border 0.2s ease;
@@ -111,8 +107,15 @@ html, body, #root {
   color: white;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
   padding-top: 1rem;
-  font-size: xx-large;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: clamp(1.2rem, 3.5vw, 2.2rem); /* scales smoothly */
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-top: 3rem; /* clears the home button */
 }
+
 
 /* Selected Options */
 .set-options-selected {
@@ -164,58 +167,6 @@ html, body, #root {
   box-shadow: 0 4px 8px rgba(255, 175, 175, 0.5);
 }
 
-/* Mobile-Specific Adjustments */
-@media (max-width: 768px) {
-  .trip-details-section {
-    margin-top: 60px;
-    padding: 24px;
-    gap: 12px;
-    width: 94%;
-  }
-
-  .trip-details-section h2 {
-    font-size: 1.4rem;
-    text-align: center;
-  }
-
-  .trip-details-section input {
-    font-size: 0.95rem;
-    padding: 12px;
-  }
-
-  .bubble {
-    width: 64px;
-    height: 64px;
-    font-size: 0.8rem;
-  }
-
-  .bubbles-container {
-    width: 95%;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.6rem;
-  }
-
-  .set-options-confirm {
-    width: 140px;
-    height: 60px;
-    border-radius: 30px;
-    font-size: 0.9rem;
-    margin-top: 40px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .form-label {
-    width: 100%;
-    text-align: left;
-    padding-right: 0;
-    margin-bottom: 6px;
-    font-size: 16px;
-  }
-}
 
 .trip-details-section {
   margin-top: 120px;
@@ -452,3 +403,101 @@ html, body, #root {
   animation: shimmer 2.8s infinite;
 }
 @keyframes shimmer { 0% { left: -60%; } 100% { left: 160%; } }
+
+/* Mobile-Specific Adjustments */
+@media (max-width: 768px) {
+  .prompt {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
+    margin-top: 5rem;
+    padding: 0 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .home-bubble {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    padding: 7px 14px;
+    border-radius: 9999px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  
+  .home-bubble span.arrow {
+    font-size: 1rem;
+    margin-right: 4px;
+  }
+  
+  .prompt {
+    color: white;
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.4);
+    font-style: italic;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    font-size: clamp(1.4rem, 3.5vw, 2.4rem);
+    margin-top: 5rem;    /* space below home button */
+    margin-bottom: 1rem; /* space above bubbles */
+    padding: 0 2rem;
+  }
+
+  .bubbles-container {
+    width: 92%;
+    grid-template-columns: repeat(4, 1fr); /* 4x4 — no orphan bubbles */
+    gap: 0.5rem;
+  }
+
+  .bubble {
+    width: min(20vw, 72px);
+    height: min(20vw, 72px);
+    font-size: 0.65rem;
+  }
+
+  .trip-details-section {
+    margin-top: 32px;
+    padding: 24px 20px;
+    width: 88%;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .form-row {
+    display: flex;
+    flex-direction: row; /* keep label + input side by side */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .form-label {
+    width: 90px;
+    font-size: 15px;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 10px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .form-input {
+    flex: 1;
+    max-width: 220px;
+    position: relative;
+  }
+
+  .find-btn {
+    margin-top: 2rem;
+    padding: 12px 20px;
+    gap: 8px;
+  }
+
+  .btn-label { font-size: 15px; }
+  .btn-sub { font-size: 11px; }
+}
