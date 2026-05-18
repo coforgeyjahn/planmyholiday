@@ -3057,6 +3057,76 @@ const LOCATIONS = [
     require('./imgs/indonesia/gili0.jpeg'),
     require('./imgs/indonesia/gili1.jpeg'),
   ]
+},
+{
+  id: "egypt",
+  country: "Egypt",
+  city: "Cairo",
+  title: "Cairo",
+  date: "2026-05-12",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Giza Pyramids & Great Sphinx at sunrise (beat the crowds!)",
+        "Camel ride around the plateau",
+        "Lunch at a local koshary spot",
+        "Egyptian Museum — don't miss Tutankhamun's treasures",
+        "Stroll & haggle in Khan el-Khalili bazaar",
+        "Dinner cruise on the Nile",
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/egypt/cairo.jpg'),
+    require('./imgs/egypt/cairo2.jpg'),
+    require('./imgs/egypt/cairo3.jpg'),
+    require('./imgs/egypt/cairo4.jpg'),
+  ]
+},
+{
+  id: "egypt",
+  country: "Egypt",
+  city: "Sharm El-Sheikh",
+  title: "Sharm El-Sheikh",
+  date: "2026-05-14",
+  itinerary: [
+    {
+      day: 1,
+      activities: [
+        "Fly or transfer to Sharm el Sheikh — check into resort",
+        "First dip in the Red Sea",
+        "Afternoon snorkeling at Ras Mohammed reef",
+        "Beachside sundowner cocktails",
+        "Fresh seafood dinner at the Old Market",
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning snorkeling or diving at the Blue Hole or Shark's Bay",
+        "Lazy beach afternoon — sunbathing & paddleboarding",
+        "Glass-bottom boat tour",
+        "Hammam spa session",
+        "Dinner at the resort",
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "Sunrise quad biking or jeep safari into the Sinai Desert",
+        "Final snorkel session at a coral garden",
+        "Beach lunch & last swim",
+        "Souvenir shopping at Naama Bay",
+        "Rooftop dinner with Red Sea views",
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/egypt/sharm0.jpg'),
+    require('./imgs/egypt/sharm1.jpg'),
+    require('./imgs/egypt/sharm2.jpg'),
+  ]
 }
 ];
 
