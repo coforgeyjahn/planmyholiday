@@ -2093,6 +2093,8 @@ const LOCATIONS = [
   country: "Slovenia",
   title: "Ljubljana",
   date: "2025-12-29",
+  accommodation: "ibis Styles Ljubljana - The Fuzzy Log",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/ibis-Styles-Ljubljana-Hostel-The-Fuzzy-Log/Ljubljana/305087",
   itinerary: [
     {
       day: 1,
@@ -2774,6 +2776,8 @@ const LOCATIONS = [
   city: "Marrakesh",
   title: "Marrakesh",
   date: "2025-06-28",
+  accommodation: "Hotel Medina",
+  accommodationlink: "https://www.booking.com/hotel/ma/medina-marrakech.html",
   itinerary: [
     {
       day: 1,
@@ -2905,6 +2909,8 @@ const LOCATIONS = [
   city: "Canggu",
   title: "Canggu",
   date: "2025-07-20",
+  accommodation: "The Farm Hostel",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/The-Farm-Hostel/Canggu/101104",
   itinerary: [
     {
       day: 1,
@@ -2954,6 +2960,8 @@ const LOCATIONS = [
   city: "Uluwatu",
   title: "Uluwatu",
   date: "2025-07-22",
+  accommodation: "Lay Day Hostel",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Lay-Day-Hostel-Uluwatu/Uluwatu/326342",
   itinerary: [
     {
       day: 1,
@@ -2991,6 +2999,8 @@ const LOCATIONS = [
   city: "Ubud",
   title: "Ubud",
   date: "2025-07-24",
+  accommodation: "Puri Garden Hotel & Hostel",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Puri-Garden-Hotel-Hostel/Ubud/280370",
   itinerary: [
     {
       day: 1,
@@ -3029,6 +3039,8 @@ const LOCATIONS = [
   city: "Gili Trawangan",
   title: "Gili Trawangan",
   date: "2025-07-26",
+  accommodation: "Atlas Gili",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Atlas-Gili/Gili-Trawangan/296121",
   itinerary: [
     {
       day: 1,
@@ -3090,7 +3102,9 @@ const LOCATIONS = [
   city: "Sharm El-Sheikh",
   title: "Sharm El-Sheikh",
   date: "2026-05-14",
-  itinerary: [
+  accommodation: "Amphorous Hotels",
+  accommodationlink: "https://www.booking.com/hotel/eg/amphoras-aqua-adults-only.html",
+  itinerary: [  
     {
       day: 1,
       activities: [
