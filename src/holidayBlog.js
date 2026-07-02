@@ -25,7 +25,17 @@ function LocationCard({ location }) {
       </div>
       <div>
         <h4>Itinerary</h4>
-        {location.accommodation && (
+        {location.itinerary.map((dayPlan, i) => (
+          <div key={i}>
+            <strong>Day {dayPlan.day}:</strong>
+            <ul>
+              {dayPlan.activities.map((activity, j) => (
+                <li key={j}>{activity}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
+                {location.accommodation && (
           <div>
             <h5>Book with:</h5>
             <ul>
@@ -45,16 +55,20 @@ function LocationCard({ location }) {
             </ul>
           </div>
         )}
-        {location.itinerary.map((dayPlan, i) => (
-          <div key={i}>
-            <strong>Day {dayPlan.day}:</strong>
+        {location.itineraryLinks && location.itineraryLinks.length > 0 && (
+          <div>
+            <h5>Itinerary Bookings:</h5>
             <ul>
-              {dayPlan.activities.map((activity, j) => (
-                <li key={j}>{activity}</li>
+              {location.itineraryLinks.map((item, i) => (
+                <li key={i}>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {item.text || `View itinerary ${i + 1}`}
+                  </a>
+                </li>
               ))}
             </ul>
           </div>
-        ))}
+        )}
       </div>
       <div>
         <h4>Photos</h4>

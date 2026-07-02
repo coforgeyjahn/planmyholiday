@@ -118,7 +118,13 @@ const LOCATIONS = [
         ]
       }
     ],
-    photos: [
+    itineraryLinks: [
+      {
+        text: "Ferry from Helsinki to Tallinn",
+        link: "https://www.getyourguide.com/en-gb/helsinki-l13/from-helsinki-return-day-trip-ferry-ticket-to-tallinn-t205504/",    
+      }
+    ],
+      photos: [
       require("./imgs/estonia/tallinn0.jpeg"),
       require("./imgs/estonia/tallinn1.jpeg"),
       require("./imgs/estonia/tallinn2.jpeg"),
@@ -463,7 +469,17 @@ const LOCATIONS = [
         ],
       },
     ],
-    photos: [
+    itineraryLinks: [
+      {
+        text: "Golden Circle Tour with Kerid Crater",
+        link: "https://www.getyourguide.com/en-gb/reykjavik-l30/grand-golden-circle-tour-t67012/",    
+      },
+      {
+        text: "Northern Lights Boat Tour",
+        link: "https://www.getyourguide.com/en-gb/booking/DE5UE55GEVB5X3JP37QAN0XG4S354UKA",
+      }
+    ],
+      photos: [
       require("./imgs/iceland/iceland0.jpeg"),
       require("./imgs/iceland/iceland1.jpeg"),
       require("./imgs/iceland/iceland2.jpeg"),
@@ -702,6 +718,12 @@ const LOCATIONS = [
           "Paragliding if weather is good - we had so much fun doing this, although it was a bit pricey",
         ],
       },
+    ],
+    itineraryLinks: [
+      {
+        text: "Tandem Paragliding Flight",
+        link: "https://www.getyourguide.com/en-gb/chamonix-mont-blanc-l1773/enjoy-chamonix-from-the-sky-paragliding-t80697/",
+      }
     ],
     photos: [
       require("./imgs/france/chamonix0.jpeg"),
@@ -1402,6 +1424,9 @@ const LOCATIONS = [
         ],
       },
     ],
+    itineraryLinks: [
+      { text: "Guided Food Tasting Tour", link: "https://www.getyourguide.com/en-gb/booking/XY06C6KMBJXB7WJNI6GVBZ0GXAJ8FW4Q" }
+    ],
     photos: [
       require("./imgs/spain/seville0.jpeg"),
       require("./imgs/spain/seville1.jpeg"),
@@ -1516,6 +1541,12 @@ const LOCATIONS = [
           "Browse shops around Henry Street or Powerscourt Townhouse",
           "Relax with a pint in a cosy pub like The Stag’s Head or The Brazen Head"
         ]
+      }
+    ],
+    itineraryLinks: [
+      {
+        text: "Cliffs of Moher Day Trip",
+        link: "https://www.getyourguide.com/en-gb/dublin-l31/cliffs-of-moher-day-tour-from-dublin-t37868/",
       }
     ],
     photos: [
@@ -2385,6 +2416,12 @@ const LOCATIONS = [
       ],
     },
   ],
+  itineraryLinks: [
+    {
+      text: "SNØ Dome Downhill Skiing",
+      link: "https://www.getyourguide.com/en-gb/oslo-l38/oslo-day-pass-for-downhill-skiing-at-sno-ski-dome-t429038/",
+    }
+  ],
   photos: [
     require('./imgs/norway/oslo0.jpeg'),
     require('./imgs/norway/oslo1.jpeg'),
@@ -2816,6 +2853,11 @@ const LOCATIONS = [
       ],
     },
   ],
+  itineraryLinks: [
+  {
+    text: "Quad Bike Ride, Camel Ride, Dinner & Show", 
+    itineraryLink: "https://www.getyourguide.com/en-gb/marrakesh-l208/marrakech-agafay-desert-quad-camel-rides-with-dinner-show-t486696/?ranking_uuid=35a6cef0-5d99-4940-94bc-2be0ec8bd784&q=Marrakesh",
+  }],
   photos: [
     require('./imgs/morocco/marrakech0.jpeg'),
     require('./imgs/morocco/marrakech7.jpeg'),
@@ -3026,7 +3068,13 @@ const LOCATIONS = [
       ],
     },
   ],
-  photos: [
+  itineraryLinks: [
+    {
+      text: "Mount Batur: Sunrise Jeep and Hot Springs",
+      link: "https://www.getyourguide.com/en-gb/bali-l347/mount-batur-private-sunrise-jeep-tour-natural-hot-spring-t175089/?ranking_uuid=4a595972-9ff8-4cf4-abf3-9a23482adc9b&q=Bali",
+    }
+  ],
+   photos: [
     require('./imgs/indonesia/ubuud0.jpeg'),
     require('./imgs/indonesia/ubuud1.jpeg'),
     require('./imgs/indonesia/ubuud2.jpeg'),
@@ -3065,7 +3113,13 @@ const LOCATIONS = [
       ],
     },
   ],
-  photos: [
+  itineraryLinks: [
+    {
+      text: "Gili Islands Snorkeling Boat Tour",
+      link: "https://www.getyourguide.com/en-gb/gili-trawangan-l88769/from-gili-trawangan-gili-islands-snorkeling-boat-tour-t530115/",    
+    }
+  ],
+   photos: [
     require('./imgs/indonesia/gili0.jpeg'),
     require('./imgs/indonesia/gili1.jpeg'),
   ]
@@ -3089,7 +3143,13 @@ const LOCATIONS = [
       ],
     },
   ],
-  photos: [
+  itineraryLinks: [
+    {
+      text: "Day Trip to Cairo",
+      link: "https://www.getyourguide.com/en-gb/cairo-l92/sharm-day-trip-to-cairo-pyramids-gem-museum-by-bus-t1192581/",
+    }
+  ],
+    photos: [
     require('./imgs/egypt/cairo.jpg'),
     require('./imgs/egypt/cairo2.jpg'),
     require('./imgs/egypt/cairo3.jpg'),
