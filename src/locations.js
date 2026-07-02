@@ -1282,6 +1282,66 @@ const LOCATIONS = [
     ],
   },
   {
+    id: "pisa-italy",
+    country: "Italy",
+    city: "Pisa",
+    title: "Pisa",
+    date: "2026-06-10",
+    accommodation: "Safestay Pisa Hostel",
+    accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Safestay-Pisa-Centrale/Pisa/43050",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Walk to the Piazza dei Miracoli — see the Leaning Tower, Duomo, and Baptistery",
+          "Wander the Camposanto Monumentale cemetery cloisters",
+          "Lunch near Borgo Stretto — try Pisan specialties like cecina",
+          "Stroll along the Arno River to Piazza dei Cavalieri",
+          "Coffee/gelato break before heading back to the station for onward travel"
+        ],
+      },
+    ],
+    photos: [
+      require("./imgs/italy/pisa4.jpeg"),
+      require("./imgs/italy/pisa1.jpeg"),
+      require("./imgs/italy/pisa2.jpeg"),
+      require("./imgs/italy/pisa3.jpeg"),
+    ],
+  },
+  {
+    id: "castiglioncello-italy",
+    country: "Italy",
+    city: "Castiglioncello",
+    title: "Castiglioncello",
+    date: "2026-06-12",
+    itinerary: [
+      {
+        day: 1,
+        activities: [
+          "Explore the town centre and harbour",
+          "Afternoon at Baia Blu or one of the rocky-cove beaches",
+          "Sunset walk along the coastal path (Via del Faro) for views over the Tyrrhenian Sea",
+          "Dinner at a seafood spot in town - try cacciucco or fresh anchovies"
+        ],
+      },
+      {
+        day: 2,
+        activities: [
+          "Beach morning",
+          "Lunch at a beach club (stabilimento) with a view of the water",
+          "Afternoon trip to nearby Rosignano Solvay to see the striking white sand 'Spiaggia Bianca'",
+          "Late dinner and drinks by the marina"
+        ],
+      },
+    ],
+    photos: [
+      require("./imgs/italy/casti2.jpeg"),
+      require("./imgs/italy/casti1.jpeg"),
+      require("./imgs/italy/casti3.jpeg"),
+      require("./imgs/italy/casti4.jpeg"),
+    ],
+  },
+  {
     id: "salerno-italy",
     country: "Italy",
     city: "Salerno",
@@ -2534,7 +2594,6 @@ const LOCATIONS = [
     require('./imgs/portugal/cascais0.jpeg'),
     require('./imgs/portugal/cascais1.jpeg'),
     require('./imgs/portugal/cascais2.jpeg'),
-    require('./imgs/portugal/cascais3.jpeg'),
   ]
 },
 {
