@@ -5,10 +5,11 @@ import Papa from "papaparse";
 
 import "./styles/SetOptions.css";
 import { GoogleGenAI } from "@google/genai";
+// to delete
 import { MAP_API_KEY } from "./keys.js";
 import Loading from "./Loading.js";
 
-const ai = new GoogleGenAI({ apiKey: MAP_API_KEY });
+console.log("Using key:", process.env.GROQ_API_KEY?.slice(0, 10));
 
 const travelPreferences = [
   "Adventure", "Relaxation", "Cultural", "Food & Drink", "Nature", "Beach",
@@ -148,7 +149,7 @@ Ensure each section is clearly labeled and written in a warm, informative tone. 
 
   // ---------------- API Call ----------------
 
-  async function findTravelDestinations() {
+ async function findTravelDestinations() {
     if (!validateForm()) return;
 
     setLoading(true);
@@ -156,10 +157,15 @@ Ensure each section is clearly labeled and written in a warm, informative tone. 
     try {
       const prompt = buildPrompt();
 
-      const response = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
-        contents: prompt
+      const res = await fetch("/.netlify/functions/find-destinations", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
       });
+
+      if (!res.ok) throw new Error(`Request failed: ${res.status}`);
+
+      const { response } = await res.json();
 
       localStorage.setItem("travelResponse", JSON.stringify(response));
       localStorage.setItem(
@@ -181,6 +187,7 @@ Ensure each section is clearly labeled and written in a warm, informative tone. 
     }
   }
 
+  
   const returnHome = () => navigate("/");
 
   // ---------------- Loading ----------------
