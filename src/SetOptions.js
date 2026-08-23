@@ -4,9 +4,7 @@ import { useNavigate } from "react-router-dom";
 import Papa from "papaparse";
 
 import "./styles/SetOptions.css";
-import { GoogleGenAI } from "@google/genai";
-// to delete
-import { MAP_API_KEY } from "./keys.js";
+
 import Loading from "./Loading.js";
 
 const travelPreferences = [
