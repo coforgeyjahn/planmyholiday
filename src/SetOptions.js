@@ -9,8 +9,6 @@ import { GoogleGenAI } from "@google/genai";
 import { MAP_API_KEY } from "./keys.js";
 import Loading from "./Loading.js";
 
-console.log("Using key:", process.env.GROQ_API_KEY?.slice(0, 10));
-
 const travelPreferences = [
   "Adventure", "Relaxation", "Cultural", "Food & Drink", "Nature", "Beach",
   "City Life", "History", "Wildlife", "Nightlife", "Shopping", "Romance",
