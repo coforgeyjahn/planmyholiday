@@ -15,6 +15,21 @@
   height: 100vh;
 }
 
+
+/* Global favourite destinations button */
+.favorite-destinations-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Leave room for the top navigation buttons */
+.App-header-toprow {
+  position: relative;
+  padding: 20px;
+}
+
 .App-logo {
   z-index: 0;
   height: 30rem;

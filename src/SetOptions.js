@@ -27,10 +27,11 @@ const SetOptions = () => {
 
   const [selectedPreferences, setSelectedPreferences] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [noBudgetPreference, setNoBudgetPreference] = useState(false);
 
   const [tripDetails, setTripDetails] = useState({
     departure: "",
-    budget: "",
+    budget: 500,
   });
 
   const [airports, setAirports] = useState([]);
@@ -104,37 +105,60 @@ const SetOptions = () => {
 
   // ---------------- AI Prompt ----------------
 
-  const buildPrompt = () => {
-    return `
-Can you find me the top 3 travel destinations that combine the following three attributes: ${selectedPreferences[0]}, ${selectedPreferences[1]}, and ${selectedPreferences[2]}?
-Please try to find flights within the £${tripDetails.budget} budget from ${tripDetails.departure}.
 
-Please format your response exactly like this:
+const buildPrompt = () => {
+  const [preference1, preference2, preference3] = selectedPreferences;
+
+  const departureInstruction = tripDetails.departure.trim()
+    ? `The traveller's departure airport is ${tripDetails.departure}. Consider flight prices and travel times from this location.`
+    : `The traveller has not specified a departure airport. Recommend destinations based on their preferences, and give general indicative travel cost guidance without assuming a departure city.`;
+
+  const budgetInstruction = tripDetails.budget
+    ? `The traveller's flight budget is £${tripDetails.budget} per person for return flights. Prioritise destinations where this budget may be realistic, taking the departure location into account if provided.`
+    : `The traveller has not specified a flight budget. Do not assume a budget or exclude destinations based on price. Give general indicative price guidance where possible.`;
+
+  return `
+Find the top 3 travel destinations that best combine these three preferences:
+${preference1}, ${preference2}, and ${preference3}.
+
+TRAVEL DETAILS:
+${departureInstruction}
+${budgetInstruction}
+
+Important:
+- The departure airport and flight budget are optional.
+- Never refuse to recommend destinations because either detail is missing.
+- Do not invent exact flight prices or travel times. If the departure location is unknown, explain that these vary by origin.
+- Prioritise how well each destination matches all three preferences.
+
+FORMAT YOUR RESPONSE EXACTLY LIKE THIS:
 
 PASSPORT_NAME:
 A funny, light-hearted travel persona name based on the three preference traits.
 
-DESTINATION_1_CONTINENT: The continent (e.g. europe, asia, africa, north-america, south-america, central-america, oceania). Lowercase, hyphenated.
+For each of the 3 destinations, use these fields:
 
-DESTINATION_1_COUNTRY: The country in lowercase, hyphenated (e.g. united-kingdom, south-africa, united-states).
+DESTINATION_1_CONTINENT: The continent in lowercase, hyphenated format (e.g. europe, asia, north-america).
 
-DESTINATION_1_CITY_SLUG: The city in lowercase, hyphenated (e.g. cape-town, new-york, los-angeles).
+DESTINATION_1_COUNTRY: The country in lowercase, hyphenated format (e.g. united-kingdom, south-africa, united-states).
 
-Exactly one line of text explaining the average return flight price and travel time from the departure location.
+DESTINATION_1_CITY_SLUG: The city in lowercase, hyphenated format (e.g. cape-town, new-york, los-angeles).
 
-*${selectedPreferences[0]}*: A few sentences explaining why this destination is great for this preference.
+**Flight Details:**: One line describing indicative return flight prices and travel time. If the departure location is unknown, say that these depend on the traveller's origin.
 
-*${selectedPreferences[1]}*: A few sentences explaining why this destination is great for this preference.
+*${preference1}*: A few sentences explaining why this destination suits this preference.
 
-*${selectedPreferences[2]}*: A few sentences on how this destination offers this preference.
+*${preference2}*: A few sentences explaining why this destination suits this preference.
 
-*Why it fits*: A final paragraph tying all three together.
+*${preference3}*: A few sentences explaining why this destination suits this preference.
 
-Repeat this exact format for destinations 2 and 3, using DESTINATION_2_CITY, DESTINATION_2_IATA, etc.
+*Why it fits*: A final paragraph tying all three preferences together.
 
-Ensure each section is clearly labeled and written in a warm, informative tone. Do not use markdown or bullet points — just structured plain text.
-    `.trim();
-  };
+Repeat the format for destinations 2 and 3, changing the destination field numbers accordingly.
+
+Use a warm, informative tone. Do not use markdown headings or bullet points in the generated response. Use clearly labelled, structured plain text.
+  `.trim();
+};
 
   // ---------------- Validation ----------------
 
@@ -260,26 +284,48 @@ Ensure each section is clearly labeled and written in a warm, informative tone. 
           </div>
 
           <div className="form-row">
-            <label className="form-label">Budget:</label>
-            <div className="form-input">
-              <div className="budget-row">
+            <label className="form-label" htmlFor="budget">Flight budget:</label>
+            <div className="form-input budget-controls">
+              <input
+                id="budget"
+                type="range"
+                min="100"
+                max="3000"
+                step="50"
+                value={tripDetails.budget || 500}
+                disabled={noBudgetPreference}
+                onChange={(e) =>
+                  setTripDetails(prev => ({
+                    ...prev,
+                    budget: Number(e.target.value)
+                  }))
+                }
+                className="slider"
+              />
+
+              <span className="budget-value">
+                {noBudgetPreference
+                  ? "Any"
+                  : `£${Number(tripDetails.budget || 500).toLocaleString()}`}
+              </span>
+
+              <label className="no-budget-toggle">
                 <input
-                  type="range"
-                  min="100"
-                  max="3000"
-                  step="50"
-                  value={tripDetails.budget || 100}
-                  onChange={(e) =>
-                    setTripDetails(prev => ({ ...prev, budget: Number(e.target.value) }))
-                  }
-                  className="slider"
+                  type="checkbox"
+                  checked={noBudgetPreference}
+                  onChange={(e) => {
+                    setNoBudgetPreference(e.target.checked);
+                    setTripDetails(prev => ({
+                      ...prev,
+                      budget: e.target.checked ? "" : 500
+                    }));
+                  }}
                 />
-                <span className="budget-value">
-                  £{(tripDetails.budget || 100).toLocaleString()}
-                </span>
-              </div>
+                No budget preference
+              </label>
             </div>
           </div>
+
         </div>
       )}
 

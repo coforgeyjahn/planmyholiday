@@ -1,18 +1,24 @@
+
 import { Routes, Route, useNavigate } from "react-router-dom";
+import FavoriteDestinationsButton from "./FavoriteDestinationsButton";
 import earth from "./earth-big.gif";
-import './styles/App.css';
+import "./styles/App.css";
 import SetOptions from "./SetOptions.js";
-import Results from "./Results.js"
+import Results from "./Results.js";
 import HolidayBlog from "./holidayBlog.js";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/set-options" element={<SetOptions />} />
-      <Route path="/results" element={<Results />} />
-      <Route path="/holiday-blog" element={<HolidayBlog />} />
-    </Routes>
+    <>
+      <FavoriteDestinationsButton />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/set-options" element={<SetOptions />} />
+        <Route path="/results" element={<Results />} />
+        <Route path="/holiday-blog" element={<HolidayBlog />} />
+      </Routes>
+    </>
   );
 }
 
@@ -21,21 +27,23 @@ function Home() {
 
   return (
     <div className="App-container bg-gradient-to-r from-blue-500 to-teal-400 text-white">
-      <header class="App-header-toprow">
-        <button className="App-button" onClick={() => navigate("/holiday-blog")}>See some of my favorite destinations</button>
-      </header>
       <img src={earth} className="App-logo" alt="earth" />
-        <div className="App-text">
-          <h1 className="App-header-text text-4xl font-bold mb-4">Plan Your Dream Vacation</h1>
-          <p className="App-description text-4xl mb-8">
-            Discover the perfect destination tailored to your preferences.
-          </p>
-          <button
-            className="App-button"
-            onClick={() => navigate("/set-options")}
-          >
-            Find the Perfect Vacation for You
-          </button>
+
+      <div className="App-text">
+        <h1 className="App-header-text text-4xl font-bold mb-4">
+          Plan Your Dream Vacation
+        </h1>
+
+        <p className="App-description text-4xl mb-8">
+          Discover the perfect destination tailored to your preferences.
+        </p>
+
+        <button
+          className="App-button"
+          onClick={() => navigate("/set-options")}
+        >
+          Find the Perfect Vacation for You
+        </button>
       </div>
     </div>
   );

@@ -219,7 +219,7 @@ function Results() {
             />
 
             <div style={{ color: "#555", fontSize: "1em", lineHeight: "1.6em" }}>
-              <ReactMarkdown>{`**Flight Details:** ${destination.description}`}</ReactMarkdown>
+              <ReactMarkdown>{`${destination.description}`}</ReactMarkdown>
             </div>
 
             <div style={{ display: "flex", gap: "12px", marginTop: "12px", justifyContent: "center"}}>

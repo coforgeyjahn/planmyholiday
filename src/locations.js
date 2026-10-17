@@ -3260,6 +3260,46 @@ const LOCATIONS = [
     require('./imgs/egypt/sharm1.jpg'),
     require('./imgs/egypt/sharm2.jpg'),
   ]
+},
+{
+  id: "poland",
+  country: "Poland",
+  city: "Warsaw",
+  title: "Warsaw",
+  date: "2026-10-14",
+  accommodation: "Kapsula Hostel",
+  accommodationlink: "https://www.hostelworld.com/pwa/hosteldetails.php/Kapsula-Hostel/Warsaw/301997",
+  itinerary: [  
+    {
+      day: 1,
+      activities: [
+        "Morning stroll through the Old Town Market Square — admire the colourful burgher houses",
+        "Climb the Barbican walls and explore the Royal Castle courtyard",
+        "Pierogi lunch at a milk bar or Zapiecek in the Old Town",
+        "Afternoon amble through Łazienki Park — golden leaves, peacocks and the Chopin monument",
+        "Warm up with hot chocolate at E. Wedel Chocolate Lounge",
+        "Sunset views from the Palace of Culture and Science terrace",
+        "Dinner of żurek and roast duck at a cosy Polish restaurant on Nowy Świat",
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning at the POLIN Museum of the History of Polish Jews",
+        "Wander the Warsaw Uprising Museum and reflect on the city's resilience",
+        "Lunch of Polish dumplings and mulled wine at the Hala Koszyki food hall",
+        "Afternoon coffee and cake in the bohemian Praga district's Koneser Centre",
+        "Browse street art and vintage shops along Ząbkowska Street",
+        "Evening stroll along the Vistula boulevards as the lights come on",
+        "Cosy cocktail bar hop in Mokotów or Powiśle to finish",
+      ],
+    },
+  ],
+  photos: [
+    require('./imgs/poland/warsaw0.jpeg'),
+    require('./imgs/poland/warsaw1.jpeg'),
+    require('./imgs/poland/warsaw2.jpeg'),
+  ]
 }
 ];
 
