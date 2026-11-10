@@ -3300,6 +3300,65 @@ const LOCATIONS = [
     require('./imgs/poland/warsaw1.jpeg'),
     require('./imgs/poland/warsaw2.jpeg'),
   ]
+},
+{
+  id: "romania",
+  country: "Romania",
+  city: "Bucharest",
+  title: "Bucharest, Bran and Brasov",
+  date: "2026-11-08",
+  accommodation: "Liad Hotel",
+  accommodationlink: "https://www.booking.com/hotel/ro/liad-accomodation.en-gb.html",
+  itinerary: [  
+    {
+      day: 1,
+      activities: [
+        "Morning stroll through the Old Town (Lipscani) — cobbled lanes, Stavropoleos Monastery and the Hanul lui Manuc inn",
+        "Coffee and a papanași (fried doughnut with jam and sour cream) at a cosy café in the Old Town",
+        "Lunch at Caru' cu Bere — Bucharest's most beautiful beer hall, with sarmale and mici",
+        "Wander the Romanian Athenaeum and Revolution Square, then pop into the CEC Palace",
+        "Afternoon in Cișmigiu Gardens — autumn leaves, rowing boats and chess players",
+        "Sunset drinks on a rooftop terrace overlooking Calea Victoriei",
+        "Dinner of traditional Romanian dishes at Hanu' lui Manuc, with live folk music",
+      ],
+    },
+    {
+      day: 2,
+      activities: [
+        "Morning tour of the Palace of the Parliament — the heaviest building in the world",
+        "Stroll through Izvor Park and along Unirii Boulevard to see the fountains",
+        "Quick lunch of ciorbă or mămăligă with cheese and sour cream near Piața Unirii",
+        "Taxi out to Therme București — the huge thermal spa complex just north of the city",
+        "Long afternoon soak in the thermal pools, lagoons and saunas — cosy in autumn",
+        "Head back into town and freshen up",
+        "Dinner and cocktails around Calea Victoriei and the Old Town to finish",
+      ],
+    },
+    {
+      day: 3,
+      activities: [
+        "6:30am meet at the Universitate taxi station on Bulevardul Nicolae Bălcescu (next to the Grand Hotel Bucharest) — coach departs 7:00am",
+        "Scenic coach ride through the Prahova Valley into the Carpathians with guided commentary on Vlad the Impaler and the Dracula legend",
+        "Around 10:00am explore Bran Castle — 'Dracula's Castle' with its views over the Transylvanian hills",
+        "Free time in medieval Brașov (about 12:15–2:00pm) — Council Square, the Black Church and lunch",
+        "Visit Pelișor Castle in Sinaia (stands in for Peleș, which is closed for maintenance until 1 December) — ornate Art Nouveau interiors and forest scenery",
+        "Cosy coach ride back to Bucharest, arriving around 7:00pm",
+        "Late dinner back in the Old Town to wrap up the trip",
+      ],
+    },
+  ],
+  itineraryLinks: [
+    {
+      text: "Day Trip to Bran, Brasov",
+      link: "https://www.tripadvisor.co.uk/AttractionProductReview-g294458-d11469827-Bucharest_to_Dracula_Castle_Peles_Castle_and_Brasov_Guided_Tour-Bucharest.html",
+    }
+  ],
+  photos: [
+    require('./imgs/romania/bucharest0.jpeg'),
+    require('./imgs/romania/bucharest1.jpeg'),
+    require('./imgs/romania/bucharest2.jpeg'),
+    require('./imgs/romania/bucharest3.jpeg'),
+  ]
 }
 ];
 
